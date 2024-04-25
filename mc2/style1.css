@@ -1,0 +1,125 @@
+*{
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+}
+body{
+    padding: 0;
+    margin: 0;
+   
+}
+header{
+    
+    width: 100%;
+}
+.navigacija{
+    padding-left: 200px;
+    padding-bottom: 20px;
+    display: flex;
+    width: 100%;
+    background-color: lightgray; 
+}
+header p{
+    padding: 20px 20px 0 20px;
+}
+.container1 h3{
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    font-family: "Arial Regular";
+    padding-bottom: 10px;
+}
+.container1 h1{
+    font-family: "Arial Regular";
+    text-transform: uppercase;
+    color: white;
+    font-size: 100px;
+    width: 70%;
+    text-align: center;
+    
+}
+.container1{
+    width: 100%;
+    height: 700px;
+    background-image: url(slike/header-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container2{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+}
+.naslov2{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    padding-top: 100px;
+    font-family: "Arial Regular";
+}
+
+
+.lijevibox{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+    align-items: center;
+    line-height: 25px;
+    font-family: "Arial Regular";
+}
+.lijevibox h3{
+    padding: 10px;
+}
+.desnibox{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+    line-height: 25px;
+    font-family: "Arial Regular";
+}
+.desnibox h3{
+    padding: 10px;
+}
+.kuhinja{
+    border: 5px solid yellow;
+    border-radius: 20px;
+}
+.container3{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.naslov3{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+.slike{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: space-around;
+    justify-content: space-around;
+    text-align: center;
+    width: 60%;
+    padding: 20px;
+}
+.slike:nth-child(5){
+    margin-bottom: 100px;
+}
