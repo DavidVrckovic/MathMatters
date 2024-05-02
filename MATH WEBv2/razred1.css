@@ -1,0 +1,267 @@
+body {
+  margin: 0;
+  font-family: "Montserrat", Helvetica, sans-serif;
+  font-weight: bold;
+  background-color: #097878;
+  color: white;
+}
+
+h3 {
+  font-family: "Questrial", Helvetica, sans-serif;
+  float: left;
+  font-size: 30px;
+  padding-left: 30px;
+  color: #87abff;
+  margin-bottom: -40px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0px;
+  overflow: hidden;
+  background-color: #ffffff;
+  font-size: 17px;
+}
+li {
+  float: left;
+}
+li a, .dropbtn {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  padding-top:20px;
+  color: black;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: #a8f6dd;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(1, 37, 54, 0.493);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #a8f6ddb0;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.search-container{
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16 px;
+  font-size: 17px;
+  border:none;
+  cursor: pointer;
+}
+
+.search-container button {
+  float: right;
+  padding: 10px;
+  margin-right: 16 px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.search-container button:hover {
+  background: #ccc;
+}
+input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border:1px solid grey;
+}
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+  height: 175px;
+}
+
+.box1 {
+  padding-top:70px;
+  flex: 65%;
+  height: 200px;
+  text-align: center;
+  overflow: hidden;
+}
+.box2 {
+  flex: 35%;
+  padding-top: 20px;
+}
+
+h1 {
+  font-size: 100px;
+  text-shadow: 6px 6px 2px #30333386;
+  padding:10px;
+  box-shadow: 5px 5px 10px 5px #0748588e;
+  width:60%;
+}
+
+.crtice {
+  margin: auto;
+  font-size: 90px;
+  width: 100%;
+  text-align: center;
+  color: #79EFB6;
+  letter-spacing: 30px;
+
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.gllekcije {
+  display: flex;
+  flex-direction: column;
+  padding-left:30px;
+}
+
+.selekcija {
+  display: flex;
+  flex-direction: column;
+  flex:1;
+}
+
+.lekcije {
+  font-family: "Montserrat", Helvetica, sans-serif;
+  font-weight: bold;
+  color: black;
+  font-size: 25px;
+  border-radius: 74px;
+  border: none;
+  text-align: left;
+  background-color: #d5edff;
+  flex-grow: 1;
+  width: 50%;
+  padding: 15px 39px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.lekcije:hover {
+  background-color: #004b4bb6;
+  color: white;
+}
+
+.img1 {
+  position: absolute;
+  top: 40px;
+  aspect-ratio: 0.74;
+  width: 35%;
+  right: 0px;
+  z-index: -1;
+}
+
+.img2 {
+  position: absolute;
+  top: 900px;
+  aspect-ratio: 0.74;
+  width: 35%;
+  right: 0px;
+  z-index: -1;
+}
+
+.img3 {
+  position: absolute;
+  top: 1760px;
+  aspect-ratio: 0.74;
+  width: 35%;
+  right: 0px;
+  z-index: -1;
+}
+
+.img4 {
+  position: absolute;
+  top: 2620px;
+  aspect-ratio: 0.74;
+  width: 35%;
+  right: 0px;
+  z-index: -1;
+}
+
+h2 {
+  font-size: 47px;
+  padding: 20px;
+  padding-left: 90px;
+  margin: 0px;
+  color: #72DEDE;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  width: 100%;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .topnav .search-container {
+    float: none;
+  }
+
+  .topnav a,
+  .topnav input[type=text],
+  .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+
+  .topnav input[type=text] {
+    border: 1px solid #ccc;
+  }
+
+  .container {
+    display: flex;
+    flex-direction:column;
+    padding: 5vw;
+  }
+
+  .box1,
+  .box2 {
+    flex:100%;
+  }
+
+  .lekcije {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  .gllekcije{
+    margin-top:200px;
+  }
+}
