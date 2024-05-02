@@ -100,15 +100,25 @@ include_once($directory_prefix . "php/main.php");
         <!-- Right Navigation -->
         <nav class="options" id="nav_options">
 
-            <!-- Navigation link -->
-            <a class="nav_link" href="<?php echo ($directory_prefix . 'login'); ?>">
-                Prijavi se
-            </a>
+            <?php
+            if (!isset($_SESSION["loggedin"])) {
+                echo ('
+                    <a class="nav_link" href="' . $directory_prefix . 'login">
+                        Prijavi se
+                    </a>
 
-            <!-- Navigation link -->
-            <a class="nav_link" href="<?php echo ($directory_prefix . 'register'); ?>">
-                Već imate račun?
-            </a>
+                    <a class="nav_link" href="' . $directory_prefix . 'register">
+                        Nemate račun?
+                    </a>
+                ');
+            } else {
+                echo ('
+                    <a class="nav_link" href="' . $directory_prefix . 'account">
+                        Račun
+                    </a>
+                ');
+            }
+            ?>
 
             <!-- Navigation link
             <a class="nav_link" id="nav_options_link">

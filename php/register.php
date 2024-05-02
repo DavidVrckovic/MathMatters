@@ -21,7 +21,7 @@ if (!($_SERVER["REQUEST_METHOD"] == "POST")) {
 
 // Check if $_POST super global variables are set to NULL
 // Fixes "Undefined array key" error
-if (!isset($_POST["first_name"], $_POST["last_name"], $_POST["email"], $_POST["password"], $_POST["repeat_password"])) {
+if (!isset($_POST["first_name"], $_POST["last_name"], $_POST["email"], $_POST["password"], $_POST["repeated_password"])) {
 
     // Redirect a user to the register page with a "invalid credentials" error
     header("Location: ../register/?error=invalid_credentials");
@@ -31,7 +31,7 @@ if (!isset($_POST["first_name"], $_POST["last_name"], $_POST["email"], $_POST["p
 
 
 // Check if password and repeat password are the same
-if ($_POST["password"] !== $_POST["repeat_password"]) {
+if ($_POST["password"] !== $_POST["repeated_password"]) {
 
     // Redirect a user to the register page with a "passwords do not match" error
     header("Location: ../register/?error=passwords_no_match");

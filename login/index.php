@@ -8,6 +8,16 @@ $directory_prefix = "../";
 
 // Include the main script
 include_once($directory_prefix . "php/main.php");
+
+
+
+// Check if a user is logged in within the session
+if (isset($_SESSION["loggedin"])) {
+
+    // Redirect a user to the account page
+    header("Location: ../account");
+    exit();
+}
 ?>
 
 
@@ -101,15 +111,25 @@ include_once($directory_prefix . "php/main.php");
         <!-- Right Navigation -->
         <nav class="options" id="nav_options">
 
-            <!-- Navigation link -->
-            <a class="nav_link" href="<?php echo ($directory_prefix . 'login'); ?>" style="background-color: #011F1F; color: white;">
-                Prijavi se
-            </a>
+            <?php
+            if (!isset($_SESSION["loggedin"])) {
+                echo ('
+                    <a class="nav_link" href="' . $directory_prefix . 'login">
+                        Prijavi se
+                    </a>
 
-            <!-- Navigation link -->
-            <a class="nav_link" href="<?php echo ($directory_prefix . 'register'); ?>">
-                Već imate račun?
-            </a>
+                    <a class="nav_link" href="' . $directory_prefix . 'register">
+                        Nemate račun?
+                    </a>
+                ');
+            } else {
+                echo ('
+                    <a class="nav_link" href="' . $directory_prefix . 'account">
+                        Račun
+                    </a>
+                ');
+            }
+            ?>
 
             <!-- Navigation link
             <a class="nav_link" id="nav_options_link">
@@ -130,63 +150,60 @@ include_once($directory_prefix . "php/main.php");
 
 
     <!-- MAIN -->
-    <main>
+    <main class="auth">
 
         <!-- Section -->
-        <section class="small has_bg_img" id="auth_section">
+        <section class="titles">
 
-            <img alt="Section background image" class="small" id="auth_section_img" src="../images/coins6.jpg" />
+            <h1 class="auth_title">
+                PRIJAVA
+            </h1>
 
-            <div class="inner has_text" id="auth_inner">
+            <hr class="auth_line" id="authLine1">
+            <hr class="auth_line" id="authLine2">
+            <hr class="auth_line" id="authLine3">
+            <hr class="auth_line" id="authLine4">
 
-                <h1 class="title">
-                    Autentifikacija
-                </h1>
+            <p class="change_auth">
+                Nemate račun?
+            </p>
 
-            </div>
+            <a class="change_auth_link" href="../register/">
+                Registrirajte se
+            </a>
 
         </section>
 
         <!-- Login Section -->
         <section class="form" id="login_section">
 
-            <form action="../php/authentication.php" class="authenticate" id="login_form" method="POST">
+            <form action="../php/login.php" class="authenticate" id="login_form" method="POST">
 
-                <h1 class="title">
-                    Prijava
-                </h1>
-
-                <p class="description">
-                    Molim vas ispunite podatke dolje kako biste se prijavili na svoj račun.
-                </p>
-
-                <hr>
-
-                <label class="input_title" for="input_username">
-                    Korisničko ime
+                <label class="input_title" for="input_email">
+                    E-adresa:
                 </label>
-                <input class="input_field" id="input_username" name="username" placeholder="Enter a username" type="text" required>
+                <input class="input_field" id="input_email" minlength="6" maxlength="255" name="email" placeholder="Upišite e-adresu" type="email" required>
 
                 <label class="input_title" for="input_password">
-                    Lozinka
+                    Lozinka:
                 </label>
-                <input class="input_field" id="input_password" name="password" placeholder="Enter a password" type="password" required>
+                <input class="input_field" id="input_password" minlength="8" maxlength="255" name="password" placeholder="Upišite zaporku" type="password" required>
 
                 <?php
                 if (isset($_GET['error'])) {
                     if ($_GET['error'] == "invalid_credentials") {
-                        echo '<p class="invalid_credentials" style="color: red;"> The provided credentials are incorrect. </p>';
-                    }
-                    if ($_GET['error'] == "wrong_password") {
-                        echo '<p class="wrong_password" style="color: red;"> The provided password is incorrect. </p>';
-                    }
-                    if ($_GET['error'] == "unknown_username") {
-                        echo '<p class="unknown_username" style="color: red;"> The provided username is incorrect. </p>';
+                        echo '<p class="error"> The provided credentials are incorrect. </p>';
                     }
                     if (isset($_SESSION['error'])) {
-                        if ($_GET['error'] == "mysql_connection") {
-                            echo '<p class="mysql_connection" style="color: red;">' . $_SESSION['error'] . '</p>';
+                        if ($_GET['error'] == "db_connection") {
+                            echo '<p class="error">' . $_SESSION['error'] . '</p>';
                         }
+                    }
+                    if ($_GET['error'] == "unknown_email") {
+                        echo '<p class="error"> The provided email is incorrect. </p>';
+                    }
+                    if ($_GET['error'] == "wrong_password") {
+                        echo '<p class="error"> The provided password is incorrect. </p>';
                     }
                 }
                 ?>
@@ -195,12 +212,9 @@ include_once($directory_prefix . "php/main.php");
                     Prijavi se
                 </button>
 
-                <br>
-
-                <a class="authenticate_other" href="../register">
-                    Ipak se registriraj
-                </a>
-                <a href="#login"></a>
+                <hr class="auth_line" id="authLine1D">
+                <hr class="auth_line" id="authLine2D">
+                <hr class="auth_line" id="authLine3D">
 
             </form>
 

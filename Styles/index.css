@@ -31,7 +31,17 @@ body {
 }
 
 
+p.error {
+    color: red;
+}
 
+
+
+
+
+/*
+//MARK: MAIN
+*/
 main {
     display: flex;
     flex-direction: row;
@@ -648,4 +658,144 @@ section .vector-2 {
     height: 883px;
     top: 1252px;
     left: 0;
+}
+
+
+
+
+
+
+/*
+//MARK: Login
+*/
+main.auth {
+    flex-direction: column;
+}
+
+section.titles {
+    display: flex;
+    flex-direction: column;
+
+    height: auto;
+
+    margin: 3% 0 0 calc(14.5vw);
+}
+
+section.form {
+    display: flex;
+    justify-content: center;
+
+    height: 600px;
+
+    padding: 3%;
+}
+
+h1.auth_title {
+    font-size: calc(0.75vw + 32px);
+    color: #98D7E0;
+}
+
+p.change_auth {
+    margin-bottom: 0;
+
+    font-size: calc(0.5vw + 12px);
+    font-weight: bold;
+    color: white;
+}
+
+a.change_auth_link {
+    font-size: calc(0.5vw + 12px);
+    font-weight: bold;
+    color: #85A0FF;
+    text-decoration: none;
+}
+
+a.change_auth_link:hover {
+    color: #5871cc;
+}
+
+hr.auth_line {
+    position: relative;
+
+    margin: 0;
+
+    width: 20vw;
+
+    color: white;
+}
+
+hr#authLine1{
+    inset: -10px 0 0 0;
+}
+
+hr#authLine2{
+    inset: 10px 0 0 17vw;
+}
+
+hr#authLine3{
+    inset: 30px 0 0 34vw;
+}
+
+hr#authLine4{
+    inset: 50px 0 0 51vw;
+}
+
+hr#authLine1D{
+    inset: -10px 0 0 34vw;
+}
+
+hr#authLine2D{
+    inset: 10px 0 0 17vw;
+}
+
+hr#authLine3D{
+    inset: 30px 0 0 0;
+}
+
+form {
+    width: 75%;
+}
+
+label {
+    display: inline-block;
+    width: 25%;
+
+    font-size: calc(0.5vw + 20px);
+    font-weight: bold;
+    color: white;
+}
+
+input {
+    margin: 5px 0 40px 0;
+    padding: 15px;
+    width: 74%;
+
+    background: #f1f1f1;
+    border: none;
+    box-sizing: border-box;
+}
+
+input:focus {
+    background-color: #dddddd;
+    outline: none;
+}
+
+button.authenticate {
+    padding: 16px 20px;
+    margin: 8px 0;
+    width: 30%;
+
+    background-color: #98D7E0;
+    border: none;
+    border-radius: 25px;
+    color: black;
+    cursor: pointer;
+    opacity: 0.85;
+
+    font-size: calc(0.67vw + 14px);
+    font-weight: bold;
+}
+
+button.authenticate:hover {
+    opacity: 1;
 }
