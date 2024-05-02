@@ -799,3 +799,35 @@ button.authenticate {
 button.authenticate:hover {
     opacity: 1;
 }
+
+
+
+
+/*
+//MARK: Logout
+*/
+section.heightFit {
+    height: 1000px;
+}
+
+a.authenticate {
+    padding: 16px 20px;
+    margin: 8px 0;
+    width: 30%;
+
+    background-color: #98D7E0;
+    border: none;
+    border-radius: 25px;
+    color: black;
+    cursor: pointer;
+    opacity: 0.85;
+    text-decoration: none;
+    text-align: center;
+
+    font-size: calc(0.67vw + 14px);
+    font-weight: bold;
+}
+
+a.authenticate:hover {
+    opacity: 1;
+}

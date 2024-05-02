@@ -117,7 +117,7 @@ if (isset($_SESSION["loggedin"])) {
                         Prijavi se
                     </a>
 
-                    <a class="nav_link" href="' . $directory_prefix . 'register">
+                    <a class="nav_link nav_active" href="' . $directory_prefix . 'register">
                         Nemate račun?
                     </a>
                 ');

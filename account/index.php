@@ -11,11 +11,11 @@ include_once($directory_prefix . "php/main.php");
 
 
 
-// Check if a user is logged in within the session
-if (isset($_SESSION["loggedin"])) {
+// Check if a user is NOT logged in within the session
+if (!isset($_SESSION["loggedin"])) {
 
-    // Redirect a user to the account page
-    header("Location: ../account");
+    // Redirect a user to the login page
+    header("Location: ../login");
     exit();
 }
 ?>
@@ -33,7 +33,7 @@ if (isset($_SESSION["loggedin"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Title & Favicon -->
-    <title> MathMatters | Login </title>
+    <title> MathMatters | Account </title>
     <link href="<?php echo ($directory_prefix . 'Images/logo.png'); ?>" rel="icon" type="image/png">
 
     <!-- CSS files & JS scripts -->
@@ -114,7 +114,7 @@ if (isset($_SESSION["loggedin"])) {
             <?php
             if (!isset($_SESSION["loggedin"])) {
                 echo ('
-                    <a class="nav_link nav_active" href="' . $directory_prefix . 'login">
+                    <a class="nav_link" href="' . $directory_prefix . 'login">
                         Prijavi se
                     </a>
 
@@ -124,7 +124,7 @@ if (isset($_SESSION["loggedin"])) {
                 ');
             } else {
                 echo ('
-                    <a class="nav_link" href="' . $directory_prefix . 'account">
+                    <a class="nav_link nav_active" href="' . $directory_prefix . 'account">
                         Račun
                     </a>
                 ');
@@ -156,7 +156,7 @@ if (isset($_SESSION["loggedin"])) {
         <section class="titles">
 
             <h1 class="auth_title">
-                PRIJAVA
+                VAŠ RAČUN
             </h1>
 
             <hr class="auth_line" id="authLine1">
@@ -165,58 +165,31 @@ if (isset($_SESSION["loggedin"])) {
             <hr class="auth_line" id="authLine4">
 
             <p class="change_auth">
-                Nemate račun?
+                Pozdrav <?php echo $_SESSION["user_firstname"]; ?>!
             </p>
-
-            <a class="change_auth_link" href="../register/">
-                Registrirajte se
-            </a>
 
         </section>
 
-        <!-- Login Section -->
-        <section class="form" id="login_section">
+        <!-- Section -->
+        <section class="titles heightFit">
 
-            <form action="../php/login.php" class="authenticate" id="login_form" method="POST">
+            <p class="change_auth">
+                E-adresa: <?php echo $_SESSION["user_email"]; ?>
+            </p>
 
-                <label class="input_title" for="input_email">
-                    E-adresa:
-                </label>
-                <input class="input_field" id="input_email" minlength="6" maxlength="255" name="email" placeholder="Upišite e-adresu" type="email" required>
+            <p class="change_auth">
+                Datum registracije: <?php echo $_SESSION["user_regdate"]; ?>
+            </p>
 
-                <label class="input_title" for="input_password">
-                    Lozinka:
-                </label>
-                <input class="input_field" id="input_password" minlength="8" maxlength="255" name="password" placeholder="Upišite zaporku" type="password" required>
+            <br><br><br>
+            <a class="authenticate" href="<?php echo ($directory_prefix . 'logout'); ?>">
+                ODJAVA
+            </a>
 
-                <?php
-                if (isset($_GET['error'])) {
-                    if ($_GET['error'] == "invalid_credentials") {
-                        echo '<p class="error"> The provided credentials are incorrect. </p>';
-                    }
-                    if (isset($_SESSION['error'])) {
-                        if ($_GET['error'] == "db_connection") {
-                            echo '<p class="error">' . $_SESSION['error'] . '</p>';
-                        }
-                    }
-                    if ($_GET['error'] == "unknown_email") {
-                        echo '<p class="error"> The provided email is incorrect. </p>';
-                    }
-                    if ($_GET['error'] == "wrong_password") {
-                        echo '<p class="error"> The provided password is incorrect. </p>';
-                    }
-                }
-                ?>
-
-                <button class="authenticate" id="login" type="submit">
-                    Prijavi se
-                </button>
-
-                <hr class="auth_line" id="authLine1D">
-                <hr class="auth_line" id="authLine2D">
-                <hr class="auth_line" id="authLine3D">
-
-            </form>
+            <hr class="auth_line" id="authLine1D">
+            <hr class="auth_line" id="authLine2D">
+            <hr class="auth_line" id="authLine3D">
+            <br><br><br>
 
         </section>
 

@@ -39,13 +39,17 @@ a.nav_link {
     cursor: pointer;
 }
 
-a.nav_link:hover {
+a.nav_link:hover,
+a.nav_link:hover * {
     background-color: #a8f6dd;
 }
 
-i#home_icon:hover {
-    background-color: #a8f6dd;
+.nav_active,
+.nav_active:hover {
+    background-color: #011F1F !important;
+    color: white !important;
 }
+
 
 
 /* Menu */
@@ -74,7 +78,7 @@ dialog.menu {
 /* Dialog link */
 dialog a.dropdown_link {
     display: block;
-    
+
     padding: 12px 16px;
 
     font-size: 14px;
