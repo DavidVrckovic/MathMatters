@@ -37,7 +37,6 @@ if (isset($_SESSION["loggedin"])) {
     <link href="<?php echo ($directory_prefix . 'Images/logo.png'); ?>" rel="icon" type="image/png">
 
     <!-- CSS files & JS scripts -->
-    <link href="index.css" rel="stylesheet" type="text/css">
     <link href="<?php echo ($directory_prefix . 'Styles/index.css'); ?>" rel="stylesheet" type="text/css">
     <link href="<?php echo ($directory_prefix . 'Styles/navigation.css'); ?>" rel="stylesheet" type="text/css">
     <link href="<?php echo ($directory_prefix . 'Styles/footer.css'); ?>" rel="stylesheet" type="text/css">

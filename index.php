@@ -140,57 +140,72 @@ include_once($directory_prefix . "php/main.php");
 
     <!-- MAIN -->
     <main>
+    <div class="linija"></div>
         <section class="prviSection">
             <article class="prviSectionLijevo">
                 <div class="naslov0">MathMatters</div>
                 <p class="paragraph1">pomoć srednjoškolcima pri učenju matematike</p>
-                <div class="naslov1">Odaberi razred</div>
                 <p class="paragraph2">Kliknite na razred koji pohađate i pristupite lekcijama koje trenutno
                     obrađujete</p>
+                <div class="naslov1">Odaberi razred</div>
                 <div class="razredi">
                     <button id="#" class="broj">1.</button>
                     <button id="#" class="broj">2.</button>
                     <button id="#" class="broj">3.</button>
                     <button id="#" class="broj">4.</button>
                 </div>
-            </article>
-            <article class="prviSectionSredina">
-                <div class="ili">ili</div>
+                <table>
+                    <tr class="noBorder">
+                        <td class="crtice"></td>
+                        <td class="crtice"></td>
+                        <td class="crtice"></td>
+                        <td class="crtice"></td>
+                    </tr>
+                </table>
             </article>
             <article class="prviSectionDesno">
-                <button id="#" class="ellipse">Pretraži Gradivo</button>
+                <img src="Images/Group 106.svg">
             </article>
         </section>
         <section class="drugiSection">
-            <div class="text-wrapper-8">MATURA 2024</div>
-            <div class="text-wrapper-14">Matura 2024!</div>
-            <p class="pripremite-se-za">
-                Pripremite se za maturu.<br />Upoznajte se s ispitnim katalogom te usavršite svoje znanje na
-                vrijeme...
-            </p>
-            <p class="ili-prona-ite">
-                <span class="span">...ili pronađite</span> <a href="#" class="text-wrapper-6"> zadatke iz
-                    prijašnjih
-                    matura</href></a>
-            </p>
-            <div class="text-wrapper-16">Registrirajte se</div>
-            <div class="rectangle-4"></div>
-            <div class="rectangle-5"></div>
-            <div class="text-wrapper-17">Ime</div>
-            <div class="rectangle-6"></div>
-            <div class="text-wrapper-18">E-mail</div>
-            <div class="rectangle-7"></div>
-            <div class="text-wrapper-19">Lozinka</div>
-            <button class="text-wrapper-20">PRIJAVI SE</button>
-            </div>
-            </div>
-            </div>
+            <article class="section2Lijevo">
+                <img src="Images/icon _plus_v2.svg">
+            </article>
+            <article class="section2Desno">
+                <div class="naslov2">Matura 2024!</div>
+                <p class="paragraph3">
+                    Pripremite se za maturu.<br />Upoznajte se s ispitnim katalogom te usavršite svoje znanje na
+                    vrijeme...
+                </p>
+                <button class="button2">MATURA 2024</button>
+                <p class="paragraph4">
+                    <span>...ili pronađite</span> <a href="#" class="zadaciLink"> zadatke iz
+                        prijašnjih
+                        matura</href></a>
+                </p>
+            </article>
+        </section>
+        <section class="treciSection">
+            <article class="section3Table">
+                <table>
+                    <tr><td></td><tr>
+                    <tr><td></td></tr>
+                    <tr><td></td></tr>
+                </table>
+            </article>
+            <article class="section3Lijevo">
+                <div class="naslov3">Registrirajte se</div>
+                <label class="regHome" for="fname"><span class="rijeci">Ime</span><input type="text" id="fname" name="fname"></label>
+                <label class="regHome" for="email"><span class="rijeci">E-mail</span><input class="gore" type="email" id="email" name="email"></label>
+                <label class="regHome" for="pwd"><span class="rijeci">Lozinka</span><input class="gore" type="password" id="pwd" name="pwd"></label>
+                <input class="dole" type="submit" value="REGISTRIRAJ SE">
+                <span class="alreadyAcc">Već imate račun?<br><a href="#">Prijavi se</a></span>
+            </article>
+            <article class="section3Desno">
+                <img src="Images/Group 100.svg">
+            </article>
         </section>
     </main>
-
-    <!-- Footer -->
-    <footer>
-    </footer>
 
 </body>
 
