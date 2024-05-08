@@ -105,7 +105,7 @@ main {
     font-weight: 700;
     color: white;
     font-size: 3vw;
-    padding-top: 7vw;
+    padding-top: 6.5vw;
     padding-bottom: 1vw;
 }
 
@@ -135,6 +135,7 @@ main {
     border-radius: 40px;
     border: none;
     background-color: #045353;
+    text-decoration: none;
 }
 
 .broj:hover {
@@ -207,7 +208,7 @@ tr.noBorder td {
     letter-spacing: 1px;
 }
 
-.section2Desno button {
+.section2Desno .button2 {
     width: 35%;
     border-radius: 40px;
     font-weight: 657;
@@ -216,9 +217,10 @@ tr.noBorder td {
     font-size: 1.7vw;
     border: none;
     background-color: #98D7E0;
+    text-align: center;
 }
 
-.section2Desno button:hover {
+.section2Desno .button2:hover {
     background-color: #48757c;
     color: #98D7E0;
 }
@@ -231,12 +233,19 @@ tr.noBorder td {
     letter-spacing: 1px;
 }
 
+.zadaciLink {
+    text-decoration: none;
+}
+
 .zadaciLink:hover {
     color: #7667fd;
     text-decoration: none;
     padding: 0 0.3vw 0 0.3vw;
 }
 
+.alreadyAcc a {
+    text-decoration: none;
+}
 
 /*///////////////////////*/
 

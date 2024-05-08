@@ -140,7 +140,7 @@ include_once($directory_prefix . "php/main.php");
 
     <!-- MAIN -->
     <main>
-    <div class="linija"></div>
+        <div class="linija"></div>
         <section class="prviSection">
             <article class="prviSectionLijevo">
                 <div class="naslov0">MathMatters</div>
@@ -149,10 +149,10 @@ include_once($directory_prefix . "php/main.php");
                     obrađujete</p>
                 <div class="naslov1">Odaberi razred</div>
                 <div class="razredi">
-                    <button id="#" class="broj">1.</button>
-                    <button id="#" class="broj">2.</button>
-                    <button id="#" class="broj">3.</button>
-                    <button id="#" class="broj">4.</button>
+                    <a href="lectures" class="broj">1.</a>
+                    <a href="lectures" class="broj">2.</a>
+                    <a href="lectures" class="broj">3.</a>
+                    <a href="lectures" class="broj">4.</a>
                 </div>
                 <table>
                     <tr class="noBorder">
@@ -177,7 +177,7 @@ include_once($directory_prefix . "php/main.php");
                     Pripremite se za maturu.<br />Upoznajte se s ispitnim katalogom te usavršite svoje znanje na
                     vrijeme...
                 </p>
-                <button class="button2">MATURA 2024</button>
+                <a class="button2">MATURA 2024</a>
                 <p class="paragraph4">
                     <span>...ili pronađite</span> <a href="#" class="zadaciLink"> zadatke iz
                         prijašnjih
@@ -188,9 +188,15 @@ include_once($directory_prefix . "php/main.php");
         <section class="treciSection">
             <article class="section3Table">
                 <table>
-                    <tr><td></td><tr>
-                    <tr><td></td></tr>
-                    <tr><td></td></tr>
+                    <tr>
+                        <td></td>
+                    <tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
                 </table>
             </article>
             <article class="section3Lijevo">
