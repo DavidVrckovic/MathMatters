@@ -12,7 +12,7 @@ function db_get_results(string $db_query)
 {
 
     // Parse the DB server data from the file
-    $database = parse_ini_file("../Protected/config.ini");
+    $database = parse_ini_file(dirname(__DIR__) . "/Protected/config.ini");
 
     // Check if the DB server data is "false" meaning there is no data or something went wrong
     if ($database == false) {

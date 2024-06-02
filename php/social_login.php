@@ -1,95 +1,65 @@
-<html>
+<?php
+require_once('../google-api-php-client--PHP8.0/vendor/autoload.php');
 
-<head>
-    <title>Login Form</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-</head>
-<style>
-    .box {
-        width: 100%;
-        max-width: 400px;
-        background-color: #f9f9f9;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 16px;
-        margin: 0 auto;
+// Create Client Request to access Google API
+$google_client = new Google\Client();
+$google_client->setAuthConfig('../Protected/google_social_login_config.json');
+$google_client->addScope("email", "profile");
+
+// Authenticate code from Google OAuth Flow
+if (isset($_GET['code'])) {
+    $_SESSION['google_token'] = $google_client->fetchAccessTokenWithAuthCode($_GET['code']);
+    $google_client->setAccessToken($_SESSION['google_token']);
+
+    /* Get profile info
+    $google_oauth = new Google_Service_Oauth2($google_client);
+    $google_account_info = $google_oauth->userinfo->get();
+    $email = $google_account_info->email;
+    $name = $google_account_info->name;
+    */
+
+    if ($google_client->getAccessToken()) {
+        $_SESSION['google_token_data'] = $google_client->verifyIdToken();
     }
-</style>
 
-<body>
+    if (isset($_SESSION['google_token_data'])) {
 
+        // Set the required DB query
+        $db_query = "SELECT * FROM mm_users WHERE email LIKE '" . $_SESSION['google_token_data']['email'] . "' LIMIT 1";
 
-    <?php
-    require_once '../google-api-php-client--PHP8.0/vendor/autoload.php';
+        // Call the function and save the results in a variable
+        $db_results = db_get_results($db_query);
 
-    // Create Client Request to access Google API
-    $client = new Google\Client();
-    $client->setAuthConfig('../Protected/google_social_login_config.json');
-    $client->addScope("email", "profile");
+        // Check if there is an error with the DB connection
+        if (isset($_SESSION["error"])) {
 
-    // Authenticate code from Google OAuth Flow
-    if (isset($_GET['code'])) {
-        $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
-        $client->setAccessToken($token);
-
-        /* get profile info
-        $google_oauth = new Google_Service_Oauth2($client);
-        $google_account_info = $google_oauth->userinfo->get();
-        $email =  $google_account_info->email;
-        $name =  $google_account_info->name;
-        */
-
-        if ($client->getAccessToken()) {
-            $token_data = $client->verifyIdToken();
+            // Redirect a user to the login page with a "database connection" error
+            header("Location: ../login/?error=db_connection");
+            exit();
         }
-    ?>
 
+        // Check if the provided email is NOT in the DB
+        if (!($db_results && mysqli_num_rows($db_results) > 0)) {
 
-        <pre>
-            <?php if (isset($token_data)) {
-                var_export($token_data);
-            }
-            ?>
-        </pre>
+            // Redirect a user to the login page with a "unknown email" error
+            header("Location: ../login/?error=unknown_email");
+            exit();
+        }
 
+        // Fetch the searched data from the DB server
+        $db_data = mysqli_fetch_assoc($db_results);
 
-    <?php } else { ?>
-        <div class="container">
+        // Update the session
+        session_regenerate_id();
+        $_SESSION["loggedin"] = TRUE;
+        $_SESSION["user_firstname"] = $db_data["first_name"];
+        $_SESSION["user_lastname"] = $db_data["last_name"];
+        $_SESSION["user_email"] = $db_data["email"];
+        $_SESSION["user_regdate"] = $db_data["reg_date"];
+    }
 
-            <div class="table-responsive">
-
-                <h3>Login using Google with PHP</h3>
-                <div class="box">
-
-                    <div class="form-group">
-                        <label for="email">Emailid</label>
-                        <input type="text" name="email" id="email" placeholder="Enter Email" class="form-control" required />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" name="pwd" id="pwd" placeholder="Enter Password" class="form-control" />
-                    </div>
-
-                    <div class="form-group">
-                        <input type="submit" id="login" name="login" value="Login" class="btn btn-success form-control" />
-                        <hr>
-                        <a href="<?php echo $client->createAuthUrl() ?>"><img src="../Images/google-signin.png" width="256"></a>
-                    </div>
-
-                    <div class="data">
-                        <p>Here is the data from your Id Token:</p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    <?php } ?>
-
-
-</body>
-
-</html>
+    // Redirect a user to the account page
+    header("Location: ../account");
+    exit();
+}
+?>

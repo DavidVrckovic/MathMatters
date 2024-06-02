@@ -7,7 +7,7 @@
 $directory_prefix = "../";
 
 // Include the main script
-include_once($directory_prefix . "php/main.php");
+require_once($directory_prefix . "php/main.php");
 
 
 
@@ -44,6 +44,12 @@ if (isset($_SESSION["loggedin"])) {
     <!-- Icons and Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
+
+
+
+<?php
+require_once(dirname(__DIR__) . "/php/social_login.php");
+?>
 
 
 
@@ -188,6 +194,11 @@ if (isset($_SESSION["loggedin"])) {
                 </label>
                 <input class="input_field" id="input_password" minlength="8" maxlength="255" name="password" placeholder="Upišite zaporku" type="password" required>
 
+                <input class="input_checkbox" id="input_remember_me" name="remember_me" type="checkbox" value="Remember me">
+                <label class="input_text" for="input_remember_me">
+                    Zapamti moju prijavu
+                </label>
+
                 <?php
                 if (isset($_GET['error'])) {
                     if ($_GET['error'] == "invalid_credentials") {
@@ -210,6 +221,10 @@ if (isset($_SESSION["loggedin"])) {
                 <button class="authenticate" id="login" type="submit">
                     Prijavi se
                 </button>
+
+                <a href="<?php echo $google_client->createAuthUrl() ?>">
+                    <img src="../Images/google-signin.png" width="256">
+                </a>
 
                 <hr class="auth_line" id="authLine1D">
                 <hr class="auth_line" id="authLine2D">

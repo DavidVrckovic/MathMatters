@@ -7,7 +7,7 @@
 $directory_prefix = "";
 
 // Include the main script
-include_once($directory_prefix . "php/main.php");
+require_once($directory_prefix . "php/main.php");
 ?>
 
 

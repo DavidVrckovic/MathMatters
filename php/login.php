@@ -1,15 +1,10 @@
 <?php
-// Start the session
-session_start();
+// Include the main script
+require_once("main.php");
 
 
 
-// Include the DB functions
-include_once("db_connection.php");
-
-
-
-// Check if the request method is not of type POST
+// Check if the request method is NOT of type POST
 if (!($_SERVER["REQUEST_METHOD"] == "POST")) {
 
     // Redirect a user to the login page
@@ -33,12 +28,8 @@ if (!isset($_POST["email"], $_POST["password"])) {
 // Set the required DB query
 $db_query = "SELECT * FROM mm_users WHERE email LIKE '" . $_POST["email"] . "' LIMIT 1";
 
-
-
 // Call the function and save the results in a variable
 $db_results = db_get_results($db_query);
-
-
 
 // Check if there is an error with the DB connection
 if (isset($_SESSION["error"])) {
@@ -48,9 +39,7 @@ if (isset($_SESSION["error"])) {
     exit();
 }
 
-
-
-// Check if the provided email is not in the DB
+// Check if the provided email is NOT in the DB
 if (!($db_results && mysqli_num_rows($db_results) > 0)) {
 
     // Redirect a user to the login page with a "unknown email" error
@@ -68,9 +57,7 @@ $db_data = mysqli_fetch_assoc($db_results);
 // Encrypt a provided password
 $encrypted_password = "\$SHA#" . hash("sha256", hash("sha256", $_POST["password"]) . "\$SHA256#");
 
-
-
-// Check if the provided (encrypted) password does not match the one in the DB
+// Check if the provided (encrypted) password does NOT match the one in the DB
 if (!($encrypted_password === $db_data["password"])) {
 
     // Redirect a user to the login page with a "wrong password" error
@@ -87,6 +74,58 @@ $_SESSION["user_firstname"] = $db_data["first_name"];
 $_SESSION["user_lastname"] = $db_data["last_name"];
 $_SESSION["user_email"] = $db_data["email"];
 $_SESSION["user_regdate"] = $db_data["reg_date"];
+
+
+
+// Check if $_POST super global variable is set
+if (isset($_POST["remember_me"])) {
+
+    // Create a session token for the user
+    // Used for local storage to keep the user logged in
+    $session_token = random_bytes(64);
+    $encrypted_session_token = "\$SHA\$RB#" . hash("sha256", hash("sha256", $session_token) . "\$SHA256#");
+
+
+
+    // Set the required DB query
+    $db_query = "SELECT user_id FROM mm_users WHERE email LIKE '" . $_SESSION["user_email"] . "' LIMIT 1";
+
+    // Call the function and save the results in a variable
+    $db_results = db_get_results($db_query);
+
+    // Check if there were any search results in the DB
+    if ($db_results && mysqli_num_rows($db_results) > 0) {
+
+        // Convert the result to a string
+        $db_results = mysqli_fetch_array($db_results)[0];
+
+        // Set the required DB query
+        $db_query = "INSERT INTO mm_user_sessions (user_id, session_token, session_expire_date) VALUES ('$db_results', '$encrypted_session_token', '" . date("Y-m-d H:i:s", time() + 60 * 60 * 24 * 30) . "')";
+
+        // Call the function and save the results in a variable
+        $db_results = db_get_results($db_query);
+    }
+
+    // Check if there is an error with the DB connection
+    if (isset($_SESSION["error"])) {
+
+        // Redirect a user to the login page with a "database connection" error
+        header("Location: ../login/?error=db_connection");
+        exit();
+    }
+
+    // Check if the session token has NOT been saved in the DB
+    if ($db_results != TRUE) {
+
+        // If the session token has NOT been saved in the DB
+        // Redirect to the login page with an error
+        header("Location: ../login/?error=login");
+        exit();
+    }
+
+    // Set local data (cookies)
+    setcookie("session_token", bin2hex($session_token), time() + 60 * 60 * 24 * 30, "/");
+}
 
 
 

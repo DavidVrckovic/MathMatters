@@ -7,7 +7,7 @@
 $directory_prefix = "../";
 
 // Include the main script
-include_once($directory_prefix . "php/main.php");
+require_once($directory_prefix . "php/main.php");
 
 
 
@@ -178,7 +178,7 @@ if (!isset($_SESSION["loggedin"])) {
             </p>
 
             <p class="change_auth">
-                Datum registracije: <?php echo $_SESSION["user_regdate"]; ?>
+                Datum registracije: <?php echo date("d F Y \a\\t h:i:s", strtotime($_SESSION["user_regdate"])); ?>
             </p>
 
             <br><br><br>

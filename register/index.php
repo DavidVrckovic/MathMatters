@@ -7,7 +7,7 @@
 $directory_prefix = "../";
 
 // Include the main script
-include_once($directory_prefix . "php/main.php");
+require_once($directory_prefix . "php/main.php");
 
 
 
@@ -181,12 +181,12 @@ if (isset($_SESSION["loggedin"])) {
                 <label class="input_title" for="input_first_name">
                     Ime:
                 </label>
-                <input class="input_field" id="input_first_name" minlength="4" maxlength="64" name="first_name" placeholder="Upišite ime" type="text" required>
+                <input class="input_field" id="input_first_name" minlength="2" maxlength="64" name="first_name" placeholder="Upišite ime" type="text" required>
 
                 <label class="input_title" for="input_last_name">
                     Prezime:
                 </label>
-                <input class="input_field" id="input_last_name" minlength="4" maxlength="64" name="last_name" placeholder="Upišite prezime" type="text" required>
+                <input class="input_field" id="input_last_name" minlength="2" maxlength="64" name="last_name" placeholder="Upišite prezime" type="text" required>
 
                 <label class="input_title" for="input_email">
                     E-adresa:
