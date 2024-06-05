@@ -182,11 +182,13 @@ require_once(dirname(__DIR__) . "/php/social_login.php");
                 </label>
                 <input class="input_field" id="input_password" minlength="8" maxlength="255" name="password" placeholder="Upišite zaporku" type="password" required>
 
-                <input class="input_checkbox" id="input_remember_me" name="remember_me" type="checkbox" value="Remember me">
-                <label class="input_text" for="input_remember_me">
-                    Zapamti moju prijavu
-                </label>
+                <div class="rememberer">
+                    <label class="input_text" for="input_remember_me">
+                        Zapamti moju prijavu
+                    </label>
 
+                    <input class="input_checkbox" id="input_remember_me" name="remember_me" type="checkbox" value="Remember me">
+                </div>
                 <?php
                 if (isset($_GET['error'])) {
                     if ($_GET['error'] == "invalid_credentials") {
@@ -205,19 +207,19 @@ require_once(dirname(__DIR__) . "/php/social_login.php");
                     }
                 }
                 ?>
+                <div class="gugl">
+                    <button class="authenticate" id="login" type="submit">
+                        Prijavi se
+                    </button>
+                <p>ILI</p>
+                    <a class="guglogin" href="<?php echo $google_client->createAuthUrl() ?>">
+                        <img src="../Images/google-signin.png" width="256">
+                    </a>
 
-                <button class="authenticate" id="login" type="submit">
-                    Prijavi se
-                </button>
-
-                <a href="<?php echo $google_client->createAuthUrl() ?>">
-                    <img src="../Images/google-signin.png" width="256">
-                </a>
-
-                <hr class="auth_line" id="authLine1D">
-                <hr class="auth_line" id="authLine2D">
-                <hr class="auth_line" id="authLine3D">
-
+                    <hr class="auth_line" id="authLine1D">
+                    <hr class="auth_line" id="authLine2D">
+                    <hr class="auth_line" id="authLine3D">
+                </div>
             </form>
 
         </section>

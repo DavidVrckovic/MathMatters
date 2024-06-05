@@ -126,15 +126,8 @@ require_once($directory_prefix . "php/main.php");
 
 
     <section class="clearfix">
-        <h3>MathMatters</h3>
-        <div class="container">
-            <div class="box1">
-                <p class="crtice">--------------</p>
-            </div>
-            <div class="box2">
-                <h1>1.razred</h1>
-            </div>
-        </div>
+        <h1>MathMatters</h1>
+        <h3>1.razred</h3>
     </section>
     <section class="gllekcije">
         <article>
@@ -229,10 +222,6 @@ require_once($directory_prefix . "php/main.php");
             </div>
         </article>
     </section>
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/1671dd2801571c4f13d09c809e95f8e3a1d41135e777ce958f3db0b0c8fce89e?" class="img1" />
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/4fe9ee691cd3bdc5f5c05a514ce59741cc2f1694fbb45766931dad8d6fdb1211?" class="img2" />
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/0ceef766cb45be3f36a2c09bc6a9e955b5f79921c3925d268b63d80c0686519e?" class="img3" />
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/6c3bb35c33735380c3cc635e5d376a7dffbbf4c1ed681f44d3ddeee071426d0b?" class="img4" />
     <footer>
         <p>Kontakt:&nbsp&nbsp
             jstojic@tvz.hr &nbsp&nbsp vkravaica@tvz.hr &nbsp&nbsp dvrckovi@tvz.hr</p>

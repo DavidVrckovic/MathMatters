@@ -39,19 +39,24 @@ body {
   margin: 0;
   font-family: "Montserrat", Helvetica, sans-serif;
   font-weight: bold;
-  background-color: #097878;
+  background-image: linear-gradient(to right, rgb(0, 124, 165), rgb(0, 83, 83));
   color: white;
-  height: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 h3 {
   font-family: "Questrial", Helvetica, sans-serif;
-  float: left;
-  font-size: 30px;
-  padding-left: 30px;
-  color: #87abff;
-  margin-bottom: -40px;
+  color: #96b4fa;
+  padding-left: 50px;
+  font-size: calc(6px + 3vw);
 }
+
+h1 {
+  font-size: calc(6px + 1vw);
+  color: #608dff;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -60,19 +65,23 @@ ul {
   background-color: #ffffff;
   font-size: 17px;
 }
+
 li {
   float: left;
 }
-li a, .dropbtn {
+
+li a,
+.dropbtn {
   display: inline-block;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  padding-top:20px;
+  padding-top: 20px;
   color: black;
 }
 
-li a:hover, .dropdown:hover .dropbtn {
+li a:hover,
+.dropdown:hover .dropbtn {
   background-color: #a8f6dd;
 }
 
@@ -97,10 +106,16 @@ li.dropdown {
   text-align: left;
 }
 
-.dropdown-content a:hover {background-color: #a8f6ddb0;}
+.dropdown-content a:hover {
+  background-color: #a8f6ddb0;
+}
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.clearfix {
+  padding-left: 50px;
 }
 
 .container {
@@ -111,46 +126,11 @@ li.dropdown {
   height: 175px;
 }
 
-.box1 {
-  padding-top:70px;
-  flex: 65%;
-  height: auto;
-  text-align: center;
-  overflow: hidden;
-}
-.box2 {
-  flex: 35%;
-  padding-top: 20px;
-}
-
-h1 {
-  font-size: 100px;
-  text-shadow: 6px 6px 2px #30333386;
-  padding:10px;
-  box-shadow: 5px 5px 10px 5px #0748588e;
-  width:400px;
-}
-
-.crtice {
-  margin: auto;
-  font-size: 90px;
-  width: 100%;
-  text-align: center;
-  color: #79EFB6;
-  letter-spacing: 30px;
-
-}
-
-.clearfix::after {
-  clear: both;
-  display: table;
-}
-
 .gllekcije {
   display: flex;
   flex-direction: column;
   margin: auto;
-  width:90%;
+  width: 90%;
 }
 
 .lekcije_active {
@@ -162,7 +142,12 @@ h1 {
   width: 80%;
 }
 
-h2{
+h2 {
+  font-size: 47px;
+  padding: 20px;
+  padding-left: 90px;
+  margin: 0px;
+  color: #a8f6dd;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -172,8 +157,8 @@ h2{
 }
 
 h2::after {
-  content: "\003c";
-  float:right;
+  content: "\003e";
+  float: left;
   padding-right: 15px;
 }
 
@@ -195,51 +180,7 @@ h2::after {
 .cjeline:hover {
   background-color: #004b4bb6;
   color: white;
-  cursor:pointer;
-}
-
-.img1 {
-  position: absolute;
-  top: 40px;
-  aspect-ratio: 0.74;
-  width: 35%;
-  right: 0px;
-  z-index: -1;
-}
-
-.img2 {
-  position: absolute;
-  top: 900px;
-  aspect-ratio: 0.74;
-  width: 35%;
-  right: 0px;
-  z-index: -1;
-}
-
-.img3 {
-  position: absolute;
-  top: 1760px;
-  aspect-ratio: 0.74;
-  width: 35%;
-  right: 0px;
-  z-index: -1;
-}
-
-.img4 {
-  position: absolute;
-  top: 2620px;
-  aspect-ratio: 0.74;
-  width: 35%;
-  right: 0px;
-  z-index: -1;
-}
-
-h2 {
-  font-size: 47px;
-  padding: 20px;
-  padding-left: 90px;
-  margin: 0px;
-  color: #72DEDE;
+  cursor: pointer;
 }
 
 footer {
@@ -273,20 +214,16 @@ footer {
 
   .container {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     padding: 5vw;
-  }
-
-  .box1,
-  .box2 {
-    flex:100%;
   }
 
   .lekcije {
     max-width: 100%;
     padding: 0 20px;
   }
-  .gllekcije{
-    margin-top:200px;
+
+  .gllekcije {
+    margin-top: 200px;
   }
 }

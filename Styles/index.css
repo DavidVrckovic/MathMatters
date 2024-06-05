@@ -531,8 +531,33 @@ button.authenticate:hover {
     opacity: 1;
 }
 
+.rememberer {
+    display:flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+}
 
+.input_text {
+    width: 40%;
+}
 
+.input_checkbox {
+    width: 20%;
+    margin: auto 0;
+}
+
+.gugl {
+    display: flex;
+    flex-direction: column;
+}
+
+.gugl p {
+    text-align: center;
+    width: 17%;
+    font-size: calc(0.5vw + 7px);
+    font-weight: bold;
+    color: white;
+}
 
 /*
 //MARK: Logout
