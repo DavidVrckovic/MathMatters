@@ -48,6 +48,24 @@ if (isset($_SESSION["loggedin"])) {
 
 
 <body>
+    <!-- XML content -->
+    <?php
+    if (isset($_GET["lang"])) {
+        setcookie("language", $_GET["lang"], time() + 60 * 60 * 24 * 365, "/");
+        header("Location: index.php");
+    }
+
+    if (isset($_COOKIE["language"]) && $_COOKIE["language"] == "en") {
+        $lang = "en";
+        $lang_change = "hr";
+    } else {
+        $lang = "hr";
+        $lang_change = "en";
+    }
+
+    $xml = simplexml_load_file("../content.xml") or die("Error: Cannot create object.");
+    ?>
+
     <!-- JS scripts -->
     <script src="<?php echo ($directory_prefix . 'Scripts/main.js'); ?>"></script>
 
@@ -58,26 +76,26 @@ if (isset($_SESSION["loggedin"])) {
         <nav class="links" id="nav_links">
 
             <!-- Navigation link -->
-            <a class="nav_link" href="<?php echo ($directory_prefix . ''); ?>" id="home_link">
+            <a class="nav_link" href="<?php echo ($directory_prefix . ''); ?>" id="home_link" style="background-color: #011F1F; color: white;">
 
                 <!-- Navigation link icon -->
-                <i class="fa-solid fa-house" id="home_icon"></i>
+                <i class="fa-solid fa-house" id="home_icon" style="background-color: #011F1F; color: white;"></i>
 
             </a>
 
             <!-- Navigation link -->
             <a class="nav_link" href="<?php echo ($directory_prefix . 'classes'); ?>">
-                Razredi
+                <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[1] ?>
             </a>
 
             <!-- Navigation link -->
             <a class="nav_link" href="<?php echo ($directory_prefix . 'lectures'); ?>">
-                Gradivo
+                <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[2] ?>
             </a>
 
             <!-- Navigation link -->
             <a class="nav_link" href="<?php echo ($directory_prefix . 'matura'); ?>">
-                Primjeri s mature
+                <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[3] ?>
             </a>
 
             <!-- Navigation dialog -->
@@ -85,22 +103,22 @@ if (isset($_SESSION["loggedin"])) {
 
                 <!-- Navigation link -->
                 <a class="dropdown_link" href="<?php echo ($directory_prefix . ''); ?>">
-                    Naslovnica
+                    <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[0] ?>
                 </a>
 
                 <!-- Navigation link -->
                 <a class="dropdown_link" href="<?php echo ($directory_prefix . 'classes'); ?>">
-                    Razredi
+                    <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[1] ?>
                 </a>
 
                 <!-- Navigation link -->
                 <a class="dropdown_link" href="<?php echo ($directory_prefix . 'lectures'); ?>">
-                    Gradivo
+                    <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[2] ?>
                 </a>
 
                 <!-- Navigation link -->
                 <a class="dropdown_link" href="<?php echo ($directory_prefix . 'matura'); ?>">
-                    Primjeti s mature
+                    <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[3] ?>
                 </a>
 
             </dialog>
@@ -111,25 +129,33 @@ if (isset($_SESSION["loggedin"])) {
         <nav class="options" id="nav_options">
 
             <?php
+            // <a class="nav_lang" href=""><img src="../Images/hren.svg"></a>
+            echo ('
+                <a class="nav_link" href="?lang=' . $lang_change . '">
+                    ' . strtoupper($lang) . '
+                </a>
+            ');
+            ?>
+
+            <?php
             if (!isset($_SESSION["loggedin"])) {
                 echo ('
                     <a class="nav_link" href="' . $directory_prefix . 'login">
-                        Prijavi se
+                        ' . $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[4] . '
                     </a>
 
-                    <a class="nav_link nav_active" href="' . $directory_prefix . 'register">
-                        Nemate račun?
+                    <a class="nav_link" href="' . $directory_prefix . 'register">
+                        ' . $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[5] . '
                     </a>
                 ');
             } else {
                 echo ('
                     <a class="nav_link" href="' . $directory_prefix . 'account">
-                        Račun
+                        ' . $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[6] . '
                     </a>
                 ');
             }
             ?>
-
         </nav>
 
     </header>
@@ -143,7 +169,7 @@ if (isset($_SESSION["loggedin"])) {
         <section class="titles">
 
             <h1 class="auth_title">
-                REGISTRACIJA
+                <?php echo $xml->xpath("//Register[@lang='$lang']/sekcija[@id='1']/artikl")[0] ?>
             </h1>
 
             <hr class="auth_line" id="authLine1">
@@ -152,11 +178,11 @@ if (isset($_SESSION["loggedin"])) {
             <hr class="auth_line" id="authLine4">
 
             <p class="change_auth">
-                Već imate račun?
+            <?php echo $xml->xpath("//Register[@lang='$lang']/sekcija[@id='1']/artikl")[1] ?>
             </p>
 
             <a class="change_auth_link" href="../login/">
-                Prijavite se
+            <?php echo $xml->xpath("//Register[@lang='$lang']/sekcija[@id='1']/artikl")[2] ?>
             </a>
 
         </section>
@@ -167,27 +193,27 @@ if (isset($_SESSION["loggedin"])) {
             <form action="../php/register.php" class="authenticate" id="register_form" method="POST">
 
                 <label class="input_title" for="input_first_name">
-                    Ime:
+                <?php echo $xml->xpath("//Register[@lang='$lang']/sekcija[@id='2']/artikl")[0] ?>
                 </label>
                 <input class="input_field" id="input_first_name" minlength="2" maxlength="64" name="first_name" placeholder="Upišite ime" type="text" required>
 
                 <label class="input_title" for="input_last_name">
-                    Prezime:
+                <?php echo $xml->xpath("//Register[@lang='$lang']/sekcija[@id='2']/artikl")[1] ?>
                 </label>
                 <input class="input_field" id="input_last_name" minlength="2" maxlength="64" name="last_name" placeholder="Upišite prezime" type="text" required>
 
                 <label class="input_title" for="input_email">
-                    E-adresa:
+                <?php echo $xml->xpath("//Register[@lang='$lang']/sekcija[@id='2']/artikl")[2] ?>
                 </label>
                 <input class="input_field" id="input_email" minlength="6" maxlength="255" name="email" placeholder="Upišite e-adresu" type="email" required>
 
                 <label class="input_title" for="input_password">
-                    Lozinka:
+                <?php echo $xml->xpath("//Register[@lang='$lang']/sekcija[@id='2']/artikl")[3] ?>
                 </label>
                 <input class="input_field" id="input_password" minlength="8" maxlength="255" name="password" placeholder="Upišite zaporku" type="password" required>
 
                 <label class="input_title" for="input_repeat_password">
-                    Ponoviti lozinku:
+                <?php echo $xml->xpath("//Register[@lang='$lang']/sekcija[@id='2']/artikl")[4] ?>
                 </label>
                 <input class="input_field" id="input_repeat_password" minlength="8" maxlength="255" name="repeated_password" placeholder="Ponovite zaporku" type="password" required>
 
@@ -214,7 +240,7 @@ if (isset($_SESSION["loggedin"])) {
                 ?>
 
                 <button class="authenticate" id="register" type="submit">
-                    Registriraj se
+                <?php echo $xml->xpath("//Register[@lang='$lang']/sekcija[@id='2']/artikl")[5] ?>
                 </button>
 
                 <hr class="auth_line" id="authLine1D">

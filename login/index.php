@@ -54,6 +54,25 @@ require_once(dirname(__DIR__) . "/php/social_login.php");
 
 
 <body>
+
+    <!-- XML content -->
+    <?php
+    if (isset($_GET["lang"])) {
+        setcookie("language", $_GET["lang"], time() + 60 * 60 * 24 * 365, "/");
+        header("Location: index.php");
+    }
+
+    if (isset($_COOKIE["language"]) && $_COOKIE["language"] == "en") {
+        $lang = "en";
+        $lang_change = "hr";
+    } else {
+        $lang = "hr";
+        $lang_change = "en";
+    }
+
+    $xml = simplexml_load_file("../content.xml") or die("Error: Cannot create object.");
+    ?>
+
     <!-- JS scripts -->
     <script src="<?php echo ($directory_prefix . 'Scripts/main.js'); ?>"></script>
 
@@ -64,26 +83,26 @@ require_once(dirname(__DIR__) . "/php/social_login.php");
         <nav class="links" id="nav_links">
 
             <!-- Navigation link -->
-            <a class="nav_link" href="<?php echo ($directory_prefix . ''); ?>" id="home_link">
+            <a class="nav_link" href="<?php echo ($directory_prefix . ''); ?>" id="home_link" style="background-color: #011F1F; color: white;">
 
                 <!-- Navigation link icon -->
-                <i class="fa-solid fa-house" id="home_icon"></i>
+                <i class="fa-solid fa-house" id="home_icon" style="background-color: #011F1F; color: white;"></i>
 
             </a>
 
             <!-- Navigation link -->
             <a class="nav_link" href="<?php echo ($directory_prefix . 'classes'); ?>">
-                Razredi
+                <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[1] ?>
             </a>
 
             <!-- Navigation link -->
             <a class="nav_link" href="<?php echo ($directory_prefix . 'lectures'); ?>">
-                Gradivo
+                <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[2] ?>
             </a>
 
             <!-- Navigation link -->
             <a class="nav_link" href="<?php echo ($directory_prefix . 'matura'); ?>">
-                Primjeri s mature
+                <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[3] ?>
             </a>
 
             <!-- Navigation dialog -->
@@ -91,22 +110,22 @@ require_once(dirname(__DIR__) . "/php/social_login.php");
 
                 <!-- Navigation link -->
                 <a class="dropdown_link" href="<?php echo ($directory_prefix . ''); ?>">
-                    Naslovnica
+                    <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[0] ?>
                 </a>
 
                 <!-- Navigation link -->
                 <a class="dropdown_link" href="<?php echo ($directory_prefix . 'classes'); ?>">
-                    Razredi
+                    <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[1] ?>
                 </a>
 
                 <!-- Navigation link -->
                 <a class="dropdown_link" href="<?php echo ($directory_prefix . 'lectures'); ?>">
-                    Gradivo
+                    <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[2] ?>
                 </a>
 
                 <!-- Navigation link -->
                 <a class="dropdown_link" href="<?php echo ($directory_prefix . 'matura'); ?>">
-                    Primjeti s mature
+                    <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[3] ?>
                 </a>
 
             </dialog>
@@ -117,25 +136,33 @@ require_once(dirname(__DIR__) . "/php/social_login.php");
         <nav class="options" id="nav_options">
 
             <?php
+            // <a class="nav_lang" href=""><img src="../Images/hren.svg"></a>
+            echo ('
+                <a class="nav_link" href="?lang=' . $lang_change . '">
+                    ' . strtoupper($lang) . '
+                </a>
+            ');
+            ?>
+
+            <?php
             if (!isset($_SESSION["loggedin"])) {
                 echo ('
-                    <a class="nav_link nav_active" href="' . $directory_prefix . 'login">
-                        Prijavi se
+                    <a class="nav_link" href="' . $directory_prefix . 'login">
+                        ' . $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[4] . '
                     </a>
 
                     <a class="nav_link" href="' . $directory_prefix . 'register">
-                        Nemate račun?
+                        ' . $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[5] . '
                     </a>
                 ');
             } else {
                 echo ('
                     <a class="nav_link" href="' . $directory_prefix . 'account">
-                        Račun
+                        ' . $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[6] . '
                     </a>
                 ');
             }
             ?>
-
         </nav>
 
     </header>
@@ -149,7 +176,7 @@ require_once(dirname(__DIR__) . "/php/social_login.php");
         <section class="titles">
 
             <h1 class="auth_title">
-                PRIJAVA
+            <?php echo $xml->xpath("//Login[@lang='$lang']/sekcija[@id='1']/artikl")[0] ?>
             </h1>
 
             <hr class="auth_line" id="authLine1">
@@ -158,11 +185,11 @@ require_once(dirname(__DIR__) . "/php/social_login.php");
             <hr class="auth_line" id="authLine4">
 
             <p class="change_auth">
-                Nemate račun?
+            <?php echo $xml->xpath("//Login[@lang='$lang']/sekcija[@id='1']/artikl")[1] ?>
             </p>
 
             <a class="change_auth_link" href="../register/">
-                Registrirajte se
+            <?php echo $xml->xpath("//Login[@lang='$lang']/sekcija[@id='1']/artikl")[2] ?>
             </a>
 
         </section>
@@ -173,18 +200,18 @@ require_once(dirname(__DIR__) . "/php/social_login.php");
             <form action="../php/login.php" class="authenticate" id="login_form" method="POST">
 
                 <label class="input_title" for="input_email">
-                    E-adresa:
+                <?php echo $xml->xpath("//Login[@lang='$lang']/sekcija[@id='2']/artikl")[0] ?>
                 </label>
                 <input class="input_field" id="input_email" minlength="6" maxlength="255" name="email" placeholder="Upišite e-adresu" type="email" required>
 
                 <label class="input_title" for="input_password">
-                    Lozinka:
+                <?php echo $xml->xpath("//Login[@lang='$lang']/sekcija[@id='2']/artikl")[1] ?>
                 </label>
                 <input class="input_field" id="input_password" minlength="8" maxlength="255" name="password" placeholder="Upišite zaporku" type="password" required>
 
                 <div class="rememberer">
                     <label class="input_text" for="input_remember_me">
-                        Zapamti moju prijavu
+                    <?php echo $xml->xpath("//Login[@lang='$lang']/sekcija[@id='2']/artikl")[2] ?>
                     </label>
 
                     <input class="input_checkbox" id="input_remember_me" name="remember_me" type="checkbox" value="Remember me">
@@ -209,9 +236,9 @@ require_once(dirname(__DIR__) . "/php/social_login.php");
                 ?>
                 <div class="gugl">
                     <button class="authenticate" id="login" type="submit">
-                        Prijavi se
+                    <?php echo $xml->xpath("//Login[@lang='$lang']/sekcija[@id='2']/artikl")[3] ?>
                     </button>
-                <p>ILI</p>
+                    <p> <?php echo $xml->xpath("//Login[@lang='$lang']/sekcija[@id='2']/artikl")[4] ?></p>
                     <a class="guglogin" href="<?php echo $google_client->createAuthUrl() ?>">
                         <img src="../Images/google-signin.png" width="256">
                     </a>

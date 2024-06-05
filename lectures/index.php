@@ -38,6 +38,24 @@ require_once($directory_prefix . "php/main.php");
 
 
 <body>
+
+    <!-- XML content -->
+    <?php
+    if (isset($_GET["lang"])) {
+        setcookie("language", $_GET["lang"], time() + 60 * 60 * 24 * 365, "/");
+        header("Location: index.php");
+    }
+
+    if (isset($_COOKIE["language"]) && $_COOKIE["language"] == "en") {
+        $lang = "en";
+        $lang_change = "hr";
+    } else {
+        $lang = "hr";
+        $lang_change = "en";
+    }
+
+    $xml = simplexml_load_file("../content.xml") or die("Error: Cannot create object.");?>
+
     <!-- JS scripts -->
 
 
@@ -48,26 +66,26 @@ require_once($directory_prefix . "php/main.php");
         <nav class="links" id="nav_links">
 
             <!-- Navigation link -->
-            <a class="nav_link" href="<?php echo ($directory_prefix . ''); ?>" id="home_link">
+            <a class="nav_link" href="<?php echo ($directory_prefix . ''); ?>" id="home_link" style="background-color: #011F1F; color: white;">
 
                 <!-- Navigation link icon -->
-                <i class="fa-solid fa-house" id="home_icon"></i>
+                <i class="fa-solid fa-house" id="home_icon" style="background-color: #011F1F; color: white;"></i>
 
             </a>
 
             <!-- Navigation link -->
             <a class="nav_link" href="<?php echo ($directory_prefix . 'classes'); ?>">
-                Razredi
+                <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[1] ?>
             </a>
 
             <!-- Navigation link -->
-            <a class="nav_link nav_active" href="<?php echo ($directory_prefix . 'lectures'); ?>">
-                Gradivo
+            <a class="nav_link" href="<?php echo ($directory_prefix . 'lectures'); ?>">
+                <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[2] ?>
             </a>
 
             <!-- Navigation link -->
             <a class="nav_link" href="<?php echo ($directory_prefix . 'matura'); ?>">
-                Primjeri s mature
+                <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[3] ?>
             </a>
 
             <!-- Navigation dialog -->
@@ -75,22 +93,22 @@ require_once($directory_prefix . "php/main.php");
 
                 <!-- Navigation link -->
                 <a class="dropdown_link" href="<?php echo ($directory_prefix . ''); ?>">
-                    Naslovnica
+                    <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[0] ?>
                 </a>
 
                 <!-- Navigation link -->
                 <a class="dropdown_link" href="<?php echo ($directory_prefix . 'classes'); ?>">
-                    Razredi
+                    <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[1] ?>
                 </a>
 
                 <!-- Navigation link -->
                 <a class="dropdown_link" href="<?php echo ($directory_prefix . 'lectures'); ?>">
-                    Gradivo
+                    <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[2] ?>
                 </a>
 
                 <!-- Navigation link -->
                 <a class="dropdown_link" href="<?php echo ($directory_prefix . 'matura'); ?>">
-                    Primjeti s mature
+                    <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[3] ?>
                 </a>
 
             </dialog>
@@ -101,25 +119,33 @@ require_once($directory_prefix . "php/main.php");
         <nav class="options" id="nav_options">
 
             <?php
+            // <a class="nav_lang" href=""><img src="../Images/hren.svg"></a>
+            echo ('
+                <a class="nav_link" href="?lang=' . $lang_change . '">
+                    ' . strtoupper($lang) . '
+                </a>
+            ');
+            ?>
+
+            <?php
             if (!isset($_SESSION["loggedin"])) {
                 echo ('
                     <a class="nav_link" href="' . $directory_prefix . 'login">
-                        Prijavi se
+                        ' . $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[4] . '
                     </a>
 
                     <a class="nav_link" href="' . $directory_prefix . 'register">
-                        Nemate račun?
+                        ' . $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[5] . '
                     </a>
                 ');
             } else {
                 echo ('
                     <a class="nav_link" href="' . $directory_prefix . 'account">
-                        Račun
+                        ' . $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[6] . '
                     </a>
                 ');
             }
             ?>
-
         </nav>
 
     </header>
@@ -127,7 +153,7 @@ require_once($directory_prefix . "php/main.php");
 
     <section class="clearfix">
         <h1>MathMatters</h1>
-        <h3>1.razred</h3>
+        <h3>1. Razred</h3>
     </section>
     <section class="gllekcije">
         <article>

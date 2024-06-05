@@ -143,19 +143,6 @@ require_once($directory_prefix . "php/main.php");
                 ');
             }
             ?>
-
-            <!-- Navigation link
-            <a class="nav_link" id="nav_options_link">
-
-                <form action="/action_page.php">
-                    <input type="text" placeholder="Search..." name="search">
-                    <button type="submit">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </form>
-
-            </a> -->
-
         </nav>
 
     </header>
@@ -225,7 +212,8 @@ require_once($directory_prefix . "php/main.php");
                 <label class="regHome" for="email"><span class="rijeci"><?php echo $xml->xpath("//Početna[@lang='$lang']/sekcija[@id='3']/artikl")[2] ?></span><input class="gore" type="email" id="email" name="email"></label>
                 <label class="regHome" for="pwd"><span class="rijeci"><?php echo $xml->xpath("//Početna[@lang='$lang']/sekcija[@id='3']/artikl")[3] ?></span><input class="gore" type="password" id="pwd" name="pwd"></label>
                 <input class="dole" type="submit" value="<?php echo $xml->xpath("//Početna[@lang='$lang']/sekcija[@id='3']/artikl")[4] ?>">
-                <span class="alreadyAcc"><?php echo $xml->xpath("//Početna[@lang='$lang']/sekcija[@id='3']/artikl")[5] ?><br><a href="#"><?php echo $xml->xpath("//Početna[@lang='$lang']/sekcija[@id='3']/artikl")[6] ?></a></span>
+                <span class="alreadyAcc"><?php echo $xml->xpath("//Početna[@lang='$lang']/sekcija[@id='3']/artikl")[5] ?><br>
+                <a href="#"><?php echo $xml->xpath("//Početna[@lang='$lang']/sekcija[@id='3']/artikl")[6] ?></a></span>
             </article>
             <article class="section3Desno">
                 <img src="Images/Group 100.svg">
