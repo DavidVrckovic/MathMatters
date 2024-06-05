@@ -162,7 +162,7 @@
     <!-- 
     MARK: MATERIJALI
     -->
-    <Materials id="hr">
+    <Materials lang="hr">
         <sekcija id="1">
             <artikl id="naslov_1">1. Razred</artikl>
         </sekcija>
@@ -216,12 +216,12 @@
             <artikl id="">Računanje trigonometrijskih funkcija</artikl>
             <artikl id="">Primjena trigonometrijskih funkcija</artikl>
         </sekcija>
-        <futer>
+        <futer id="1">
             <kontakt>Kontakt: jstojic@tvz.hr vkravaica@tvz.hr dvrckovi@tvz.hr</kontakt>
         </futer>
     </Materials>
 
-    <Materials id="hr">
+    <Materials lang="en">
         <sekcija id="1">
             <artikl id="naslov_1">1st Grade</artikl>
         </sekcija>
@@ -275,7 +275,7 @@
             <artikl id="lekcija_32">Trigonometric functions calculation</artikl>
             <artikl id="lekcija_33">Application of trigonometric functions</artikl>
         </sekcija>
-        <futer>
+        <futer id="1">
             <kontakt>Contact: jstojic@tvz.hr vkravaica@tvz.hr dvrckovi@tvz.hr</kontakt>
         </futer>
     </Materials>
@@ -284,11 +284,10 @@
     MARK: CIJELI BROJEVI
 -->
 
-    <cijeliBrojevi id="hr">
+    <cijeliBrojevi lang="hr">
 
         <sekcija id="1">
-            <artikl id="naslov_1">MathMatters</artikl>
-            <artikl id="naslov_2">Realni brojevi > Prirodni, cijeli i racionalni brojevi</artikl>
+            <artikl id="naslov_1">Realni brojevi > Prirodni, cijeli i racionalni brojevi</artikl>
         </sekcija>
 
         <sekcija id="2">
@@ -299,7 +298,7 @@
                 2,3,4...Zajedno čine skup N.
                 Ako želimo reći da je broj 10 dio skupa N ovako ćemo to zapisati: 10 E N.</artikl>
             <artikl id="gumb">N = {0,1,2,3,4...besk}</artikl>
-            <artikl id="paragraf_2">Slika 1. Brojenjem godova na panju određujemo broj godina drveta</artikl>
+            <artikl id="paragraf_2">&lt;em&gt;Slika 1.&lt;/em&gt; Brojenjem godova na panju određujemo broj godina drveta</artikl>
         </sekcija>
 
         <sekcija id="3">
@@ -308,7 +307,7 @@
                 brojevi s
                 minusom ispred.Zajedno čine skup Z.</artikl>
             <artikl id="gumb">Z = {-2,-1,0,1,2,3,...besk}</artikl>
-            <artikl id="paragraf_2">Slika 2. Cijeli se brojevi koriste za označavanje katova
+            <artikl id="paragraf_2">&lt;em&gt;Slika 2.&lt;/em&gt; Cijeli se brojevi koriste za označavanje katova
                 najčešće u
                 garažama.</artikl>
         </sekcija>
@@ -319,7 +318,7 @@
                 kojemu je
                 brojnik cijeli, a nazivnik prirodni broj.</artikl>
             <artikl id="gumb">Q = {-1/2,-0.3,0,1/7,2,...besk}</artikl>
-            <artikl id="paragraf_2">Slika 3. Racionalni brojevi mogu se korisiti u svrhu podjele
+            <artikl id="paragraf_2">&lt;em&gt;Slika 3.&lt;/em&gt; Racionalni brojevi mogu se korisiti u svrhu podjele
                 torte na
                 jednake komade.</artikl>
         </sekcija>
@@ -379,10 +378,9 @@
 
     </cijeliBrojevi>
 
-    <cijeliBrojevi id="en">
+    <cijeliBrojevi lang="en">
         <sekcija id="1">
-            <artikl id="naslov_1">MathMatters</artikl>
-            <artikl id="naslov_2">Real numbers > Natural, integer, and rational numbers</artikl>
+            <artikl id="naslov_1">Real numbers > Natural, integer, and rational numbers</artikl>
         </sekcija>
 
         <sekcija id="2">
@@ -392,7 +390,7 @@
                 i.e. 1, 2, 3, 4... Together they make up the set N. If we want to say that the
                 number 10 is part of the set N, we will write it like this: 10 E N.</artikl>
             <artikl id="gumb">N = {0, 1, 2, 3, 4... infinity}</artikl>
-            <artikl id="paragraf_2">Image 1. Counting the years on the stump determines the number
+            <artikl id="paragraf_2">&lt;em&gt;Image 1.&lt;/em&gt; Counting the years on the stump determines the number
                 of years of the tree</artikl>
         </sekcija>
 
@@ -401,7 +399,7 @@
             <artikl id="paragraf_1">Integers are all natural numbers, zero and all natural numbers
                 with a minus in front. Together they form the set Z.</artikl>
             <artikl id="gumb">Z = {-2, -1, 0, 1, 2, 3... infinity}</artikl>
-            <artikl id="paragraf_2">Image 2. Whole numbers are used to indicate floors, most often
+            <artikl id="paragraf_2">&lt;em&gt;Image 2.&lt;/em&gt; Whole numbers are used to indicate floors, most often
                 in garages.</artikl>
         </sekcija>
 
@@ -411,7 +409,7 @@
                 a fraction whose numerator is a whole number and whose denominator is a natural
                 number.</artikl>
             <artikl id="gumb">Q = {-1/2, -0.3, 0, 1/7, 2... infinity}</artikl>
-            <artikl id="paragraf_2">Image 3. Rational numbers can be used for the purpose of
+            <artikl id="paragraf_2">&lt;em&gt;Image 3.&lt;/em&gt; Rational numbers can be used for the purpose of
                 dividing the cake into equal pieces.</artikl>
         </sekcija>
 
@@ -442,21 +440,20 @@
             <artikl id="nacin_1">1st method</artikl>
             <artikl id="primjer_1">We want to find the greatest common divisor of the numbers 48 and
                 72. First, let's divide the numbers into prime factors.</artikl>
-            <artikl id="paragraf_3">The marked parts represent prime factors common to the numbers.</artikl>
-            <artikl id="paragraf_4">The product of these factors is their greatest common factor</artikl>
+            <artikl id="paragraf_3">The marked parts represent prime factors common to the numbers. &lt;br&gt; The product of these factors is their greatest common factor</artikl>
             <artikl id="način_2">2nd method</artikl>
-            <artikl id="paragraf_5">We can find the divisor in a faster way by dividing numbers into
+            <artikl id="paragraf_4">We can find the divisor in a faster way by dividing numbers into
                 simple factors simultaneously.</artikl>
-            <artikl id="paragraf_6">Least Common Multiple</artikl>
-            <artikl id="paragraf_7">We determine the LCG by looking for each of the factors from the
+            <artikl id="paragraf_5">Least Common Multiple</artikl>
+            <artikl id="paragraf_6">We determine the LCG by looking for each of the factors from the
                 previous example, how many times they are repeated when dividing the numbers. The
                 number of times that is repeated the most will be used as a factor in the common
                 multiple.</artikl>
-            <artikl id="paragraf_8">In this case, the number 2 appears at most four times, and the
+            <artikl id="paragraf_7">In this case, the number 2 appears at most four times, and the
                 number 3 twice, and the lowest common multiple is the product of these numbers. </artikl>
         </sekcija>
 
-        <futer>
+        <futer id="1">
             <kontakt>Contact: jstojic@tvz.hr vkravaica@tvz.hr dvrckovi@tvz.hr</kontakt>
         </futer>
 

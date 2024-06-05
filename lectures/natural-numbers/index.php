@@ -38,6 +38,25 @@ require_once($directory_prefix . "php/main.php");
 
 
 <body>
+
+    <!-- XML content -->
+    <?php
+    if (isset($_GET["lang"])) {
+        setcookie("language", $_GET["lang"], time() + 60 * 60 * 24 * 365, "/");
+        header("Location: index.php");
+    }
+
+    if (isset($_COOKIE["language"]) && $_COOKIE["language"] == "en") {
+        $lang = "en";
+        $lang_change = "hr";
+    } else {
+        $lang = "hr";
+        $lang_change = "en";
+    }
+
+    $xml = simplexml_load_file("../../content.xml") or die("Error: Cannot create object.");
+    ?>
+
     <!-- JS scripts -->
     <script src="<?php echo ($directory_prefix . 'Scripts/main.js'); ?>"></script>
 
@@ -48,26 +67,26 @@ require_once($directory_prefix . "php/main.php");
         <nav class="links" id="nav_links">
 
             <!-- Navigation link -->
-            <a class="nav_link" href="<?php echo ($directory_prefix . ''); ?>" id="home_link">
+            <a class="nav_link" href="<?php echo ($directory_prefix . ''); ?>" id="home_link" style="background-color: #011F1F; color: white;">
 
                 <!-- Navigation link icon -->
-                <i class="fa-solid fa-house" id="home_icon"></i>
+                <i class="fa-solid fa-house" id="home_icon" style="background-color: #011F1F; color: white;"></i>
 
             </a>
 
             <!-- Navigation link -->
             <a class="nav_link" href="<?php echo ($directory_prefix . 'classes'); ?>">
-                Razredi
+                <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[1] ?>
             </a>
 
             <!-- Navigation link -->
-            <a class="nav_link nav_active" href="<?php echo ($directory_prefix . 'lectures'); ?>">
-                Gradivo
+            <a class="nav_link" href="<?php echo ($directory_prefix . 'lectures'); ?>">
+                <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[2] ?>
             </a>
 
             <!-- Navigation link -->
             <a class="nav_link" href="<?php echo ($directory_prefix . 'matura'); ?>">
-                Primjeri s mature
+                <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[3] ?>
             </a>
 
             <!-- Navigation dialog -->
@@ -75,22 +94,22 @@ require_once($directory_prefix . "php/main.php");
 
                 <!-- Navigation link -->
                 <a class="dropdown_link" href="<?php echo ($directory_prefix . ''); ?>">
-                    Naslovnica
+                    <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[0] ?>
                 </a>
 
                 <!-- Navigation link -->
                 <a class="dropdown_link" href="<?php echo ($directory_prefix . 'classes'); ?>">
-                    Razredi
+                    <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[1] ?>
                 </a>
 
                 <!-- Navigation link -->
                 <a class="dropdown_link" href="<?php echo ($directory_prefix . 'lectures'); ?>">
-                    Gradivo
+                    <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[2] ?>
                 </a>
 
                 <!-- Navigation link -->
                 <a class="dropdown_link" href="<?php echo ($directory_prefix . 'matura'); ?>">
-                    Primjeti s mature
+                    <?php echo $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[3] ?>
                 </a>
 
             </dialog>
@@ -101,25 +120,33 @@ require_once($directory_prefix . "php/main.php");
         <nav class="options" id="nav_options">
 
             <?php
+            // <a class="nav_lang" href=""><img src="../Images/hren.svg"></a>
+            echo ('
+                <a class="nav_link" href="?lang=' . $lang_change . '">
+                    ' . strtoupper($lang) . '
+                </a>
+            ');
+            ?>
+
+            <?php
             if (!isset($_SESSION["loggedin"])) {
                 echo ('
                     <a class="nav_link" href="' . $directory_prefix . 'login">
-                        Prijavi se
+                        ' . $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[4] . '
                     </a>
 
                     <a class="nav_link" href="' . $directory_prefix . 'register">
-                        Nemate račun?
+                        ' . $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[5] . '
                     </a>
                 ');
             } else {
                 echo ('
                     <a class="nav_link" href="' . $directory_prefix . 'account">
-                        Račun
+                        ' . $xml->xpath("//Navigacija[@lang='$lang']/NavLink")[6] . '
                     </a>
                 ');
             }
             ?>
-
         </nav>
 
     </header>
@@ -127,109 +154,100 @@ require_once($directory_prefix . "php/main.php");
     <div class="clearfix">
         <section class="ime">
             <h3>MathMatters</h3> <br>
-            <h4>Realni brojevi > Prirodni, cijeli i racionalni brojevi</h4>
+            <h4><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='1']/artikl")[0]?></h4>
         </section>
         <section class="container">
             <div class="box1_1">
-                <h1>PRIRODNI,CIJELI I RACIONALNI BROJEVI</h1> <br>
-                <h2>PRIRODNI BROJEVI</h2>
+                <h1><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='2']/artikl")[0]?></h1> <br>
+                <h2><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='2']/artikl")[1]?></h2>
                 <p>
-                    Prirodni brojevi su oni koji kreću od 1 u pozitivnu beskonačnost dakle 1, 2,3,4...Zajedno čine skup N.
-                    Ako želimo reći da je broj 10 dio skupa N ovako ćemo to zapisati: 10 E N.
+                <?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='2']/artikl")[2]?>
                 </p>
-                <button class="formula">N = {0,1,2,3,4...besk}</button>
+                <button class="formula"><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='2']/artikl")[3]?></button>
             </div>
             <div class="box2">
                 <img class="god" src="../../Images/file.png"> <br>
-                <p><em>Slika 1.</em> Brojenjem godova na panju određujemo broj godina drveta</p>
+                <p><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='2']/artikl")[4]?>
             </div>
 
         </section>
 
         <section class="container2">
             <div class="box1_1">
-                <h2>CIJELI BROJEVI</h2>
+                <h2><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='3']/artikl")[0]?></h2>
                 <p>
-                    Cijeli brojevi su svi prirodni brojevi, nula i svi prirodni brojevi s minusom ispred.Zajedno čine skup Z.
+                <?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='3']/artikl")[1]?>
                 </p>
-                <button class="formula">Z = {-2,-1,0,1,2,3,...besk}</button>
+                <button class="formula"><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='3']/artikl")[2]?></button>
             </div>
             <div class="box3">
                 <div class="numb">1</div>
                 <div class="numb">0</div>
                 <div class="numb">-1</div><br>
-                <p><em>Slika 2. </em> Cijeli se brojevi koriste za označavanje katova najčešće u garažama.</p>
+                <p><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='3']/artikl")[3]?></p>
 
             </div>
 
         </section>
         <section class="container2">
             <div class="box1_1">
-                <h2>RACIONALNI BROJEVI</h2>
+                <h2><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='4']/artikl")[0]?></h2>
                 <p>
-                    RACIONALNI BROJ je broj koji se može zapisati u obliku razlomka kojemu je brojnik cijeli, a nazivnik prirodni broj.
+                <?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='4']/artikl")[1]?>
                 </p>
-                <button class="formula">Q = {-1/2,-0.3,0,1/7,2,...besk}</button>
+                <button class="formula"><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='4']/artikl")[2]?></button>
             </div>
             <div class="box2">
                 <img class="trts" src="../../Images/torta.png">
-                <p><em>Slika 3. </em> Racionalni brojevi mogu se korisiti u svrhu podjele torte na jednake komade.</p>
+                <p><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='4']/artikl")[3]?></p>
             </div>
 
         </section>
 
         <section class="container5">
             <div class="box1_2">
-                <h2 class="pnp">Parni i neparni brojevi</h2>
-                <p>Parni brojevi su oni koji su djeljivi s brojem 2 bez ostatka, a neparni su svi koji nisu</p><br>
-                <div class="n"><em class="p"> 10 : 2 = 5 </em> &nbsp&nbsp&nbsp > PARAN</div>
-                <div class="n"><em class="p"> 5 : 2 =2.5 </em> &nbsp&nbsp > NEPARAN</div>
+                <h2 class="pnp"><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='5']/artikl")[0]?></h2>
+                <p><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='5']/artikl")[1]?></p><br>
+                <div class="n"><em class="p"> 10 : 2 = 5 </em> &nbsp&nbsp&nbsp > <?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='5']/artikl")[2]?></div>
+                <div class="n"><em class="p"> 5 : 2 =2.5 </em> &nbsp&nbsp > <?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='5']/artikl")[3]?></div>
             </div>
 
             <div class="box1_2">
-                <h2 class="pnp">Prosti i složeni brojevi</h2>
-                <p>Prosti broj je onaj koji ima 2 djeljitelja, a složeni onaj koji ima više od 2</p><br>
-                <div class="n"><em class="p">2 </em> je djeljiv 1 i 2 tako da je PROST </div>
-                <div class="n"><em class="p">4 </em> je djeljiv 4, 2, 1 tako da je SLOŽEN</div>
-                <div class="n"><em class="jedan"> 1 </em>&nbsp je djeljiv SAMO S 1 tako da je NIJE NI PROST NI SLOŽEN</div>
+                <h2 class="pnp"><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='6']/artikl")[0]?></h2>
+                <p><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='6']/artikl")[1]?></p><br>
+                <div class="n"><em class="p">2 </em> <?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='6']/artikl")[2]?> </div>
+                <div class="n"><em class="p">4 </em> <?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='6']/artikl")[3]?></div>
+                <div class="n"><em class="jedan"> 1 </em> <?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='6']/artikl")[4]?></div>
             </div>
 
             <div class="box1_2">
-                <h2 class="pnp"><em>DODATNI MATERIJAL</em></h2>
-                <p>Najveći zajednički djelitelj (NZD) i Najmanji zajednički višekratnik (NZV): Ovi koncepti su ključni u teoriji brojeva.
-                    NZD je najveći broj s kojim se 2 broja mogu dijeliti, dok je NZV najmanji broj koji je višekratnik oba broja.</p><br>
-                <p class="nzd">Najveći zajednički djelitelj </p>
-                <div class="nm">1.način </div><br>
-                <div class="n">Želimo naći najveći zajednički djelitelj brojeva 48 i 72.Prvo rastavimo brojeve na proste faktore.</div><br>
+                <h2 class="pnp"><em><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='7']/artikl")[0]?></em></h2>
+                <p><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='7']/artikl")[1]?></p>
+                <div class="nm"><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='7']/artikl")[2]?></div><br>
+                <div class="n"><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='7']/artikl")[3]?></div><br>
                 <div class="n"><img src="../../Images/Group 117.svg"></div>
             </div><br>
             <div class="box1_2">
-                <p>Označene dijelovi predstavljaju proste faktore koji su zajednički brojevima.
-                    <br>
-                    Umnožak tih faktora je njihov najveći zajednički djelitelj
-                </p>
+                <p><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='7']/artikl")[4]?></p>
                 <div class="n"><img src="../../Images/Group 118.svg"></div>
             </div><br>
             <div class="box1_2">
-                <div class="nm">2.način </div><br>
-                <p>Djelitelja možemo pronaći i na brži način djeljenjem brojeva na proste faktore istovremeno.</p>
+                <div class="nm"><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='7']/artikl")[5]?></div><br>
+                <p><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='7']/artikl")[6]?></p>
                 <div class="n"><img src="../../Images/Group 119.svg"></div>
             </div><br>
             <div class="box1_2">
-                <p class="nzd">Najmanji zajednički višekratnik </p><br>
-                <p>NZV određujemo tako da za svaki od faktora iz prošlog primjera pogledamo koliko se puta ponavljaju pri rastavu brojeva.
-                    Onoliko puta koliko se najviše ponavlja će se koristiti kao faktor u zajedničkom višekratniku.</p>
+                <p class="nzd"><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='7']/artikl")[7]?></p><br>
+                <p><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='7']/artikl")[8]?></p>
                 <div class="n"><img src="../../Images/Group 114.svg"></div>
             </div><br>
             <div class="box1_2">
-                <p>U ovome slučaju broj 2 se pojavljuje najviše četiri puta, a broj 3 dva puta, a najmanji zajednički višekratnik je
-                    umnožak tih brojeva. </p>
+                <p><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/sekcija[@id='7']/artikl")[9]?></p>
                 <div class="n"><img src="../../Images/Group 116.svg"></div>
             </div>
         </section>
         <footer>
-            <p>Kontakt:&nbsp&nbsp
-                jstojic@tvz.hr &nbsp&nbsp vkravaica@tvz.hr &nbsp&nbsp dvrckovi@tvz.hr</p>
+            <p><?php echo $xml->xpath("//cijeliBrojevi[@lang='$lang']/futer[@id='1']/kontakt")[0]?></p>
         </footer>
 
 </body>

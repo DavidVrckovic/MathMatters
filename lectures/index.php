@@ -39,8 +39,8 @@ require_once($directory_prefix . "php/main.php");
 
 <body>
 
-    <!-- XML content -->
-    <?php
+        <!-- XML content -->
+        <?php
     if (isset($_GET["lang"])) {
         setcookie("language", $_GET["lang"], time() + 60 * 60 * 24 * 365, "/");
         header("Location: index.php");
@@ -54,10 +54,10 @@ require_once($directory_prefix . "php/main.php");
         $lang_change = "en";
     }
 
-    $xml = simplexml_load_file("../content.xml") or die("Error: Cannot create object.");?>
+    $xml = simplexml_load_file("../content.xml") or die("Error: Cannot create object.");
+    ?>
 
     <!-- JS scripts -->
-
 
     <!-- Header & Navigation -->
     <header>
@@ -153,104 +153,101 @@ require_once($directory_prefix . "php/main.php");
 
     <section class="clearfix">
         <h1>MathMatters</h1>
-        <h3>1. Razred</h3>
+        <h3> <?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='1']/artikl")[0]?> </h3>
     </section>
     <section class="gllekcije">
         <article>
             <div class="gradiva">
-                <h2>REALNI BROJEVI</h2>
+                <h2><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[0]?></h2>
             </div>
             <div class="lekcije" style="display: none;">
-                <a href="natural-numbers" class="cjeline">Prirodni, cijeli i racionalni brojevi</a>
-                <a href="REALNI" class="cjeline">Realni brojevi</a>
-                <a href="INTER" class="cjeline">Intervali</a>
-                <a href="OPER.REAL" class="cjeline">Operacije s realnim brojevima</a>
+                <a href="natural-numbers" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[1]?></a>
+                <a href="REALNI" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[2]?></a>
+                <a href="INTER" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[3]?></a>
+                <a href="OPER.REAL" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[4]?></a>
             </div>
         </article>
         <article>
             <div class="gradiva">
-                <h2>POTENCIJE S CJELOBROJNIM EKSPONENTOM</h2>
+                <h2><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[5]?></h2>
             </div>
             <div class="lekcije" style="display: none;">
-                <a href="POZ.EKSP" class="cjeline">Potencije s pozitivnim eksponentom</a>
-                <a href="POT.NEG" class="cjeline">Potencije s negativnim eksponentom</a>
-                <a href="ZNAN.ZAPIS" class="cjeline">Znanstveni zapis realnog broja</a>
+                <a href="POZ.EKSP" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[6]?></a>
+                <a href="POT.NEG" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[7]?></a>
+                <a href="ZNAN.ZAPIS" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[8]?></a>
             </div>
         </article>
         <article>
             <div class="gradiva">
-                <h2>ALGEBARSKI IZRAZI I RAZLOMCI</h2>
+                <h2><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[9]?></h2>
             </div>
             <div class="lekcije" style="display: none;">
-                <a href="MONIPOL" class="cjeline">Monomi i polinomi</a>
-                <a href="MNOŽ.POL" class="cjeline">Množenje polinoma</a>
-                <a href="VR.ALG" class="cjeline">Vrijednost algebarskog izraza</a>
-                <a href="FAKT" class="cjeline">Faktorizacija</a>
-                <a href="ALG.RAZL" class="cjeline">Algebarski razlomci</a>
+                <a href="MONIPOL" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[10]?></a>
+                <a href="MNOŽ.POL" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[11]?></a>
+                <a href="VR.ALG" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[12]?></a>
+                <a href="FAKT" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[13]?></a>
+                <a href="ALG.RAZL" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[14]?></a>
             </div>
         </article>
         <article>
             <div class="gradiva">
-                <h2>LINEARNE JEDNADŽBE</h2>
+                <h2><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[15]?></h2>
             </div>
             <div class="lekcije" style="display: none;">
-                <a href="JEDNA" class="cjeline">Jednadžbe s jednom nepoznanicom</a>
-                <a href="JEAPS" class="cjeline">Jednadnžbe s apsolutnim vrijednostima</a>
-                <a href="JDVIJE" class="cjeline">Jednadžbe s dvije nepoznanice</a>
-                <a href="PRIMJ.JEDN" class="cjeline">Primjena jednadžbi</a>
+                <a href="JEDNA" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[16]?></a>
+                <a href="JEAPS" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[17]?></a>
+                <a href="JDVIJE" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[18]?></a>
+                <a href="PRIMJ.JEDN" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[19]?></a>
             </div>
         </article>
         <article>
             <div class="gradiva">
-                <h2>LINEARNE NEJEDNADŽBE</h2>
+                <h2><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[20]?></h2>
             </div>
             <div class="lekcije" style="display: none;">
-                <a href="NEJJEDNA" class="cjeline">Nejednadžbe s jednom nepoznanicom</a>
-                <a href="SUST.JEDN" class="cjeline">Sustavi jednadžbi</a>
-                <a href="SLOŽ.NEJ" class="cjeline">Složenije nejednadžbe</a>
-                <a href="NEJAPS" class="cjeline">Nejednadžbe s apsolutnim vrijednostima</a>
-                <a href="PRIMJ.NEJ" class="cjeline">Primjena nejednadžbi</a>
+                <a href="NEJJEDNA" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[21]?></a>
+                <a href="SUST.JEDN" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[22]?></a>
+                <a href="SLOŽ.NEJ" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[23]?></a>
+                <a href="NEJAPS" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[24]?></a>
+                <a href="PRIMJ.NEJ" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[25]?></a>
             </div>
         </article>
         <article>
             <div class="gradiva">
-                <h2>LINEARNE FUNKCIJE</h2>
+                <h2><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[26]?></h2>
             </div>
             <div class="lekcije" style="display: none;">
-                <a href="KOOR.SUS" class="cjeline">Koordinantni sustav</a>
-                <a href="LIN.FUN" class="cjeline">Linearna funkcija</a>
-                <a href="FUNK.APS" class="cjeline">Funkcija s apsolutnim vrijednostima</a>
-                <a href="SUST.LIN.JEDN" class="cjeline">Sustavi linearnih jednadžbi</a>
-                <a href="PRIM.SUS.LIN.JEDN" class="cjeline">Primjena sustava linearnih
-                    jednadžbi</a>
+                <a href="KOOR.SUS" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[27]?></a>
+                <a href="LIN.FUN" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[28]?></a>
+                <a href="FUNK.APS" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[29]?></a>
+                <a href="SUST.LIN.JEDN" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[30]?></a>
+                <a href="PRIM.SUS.LIN.JEDN" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[31]?></a>
             </div>
         </article>
         <article>
             <div class="gradiva">
-                <h2>SUKLADNOST I SLIČNOST</h2>
+                <h2><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[32]?></h2>
             </div>
             <div class="lekcije" style="display: none;">
-                <a href="KOOR.SUS" class="cjeline">Karakteristične točke trokuta</a>
-                <a href="LIN.FUN" class="cjeline">Sukladnost</a>
-                <a href="FUNK.APS" class="cjeline">Sličnost</a>
-                <a href="SUST.LIN.JEDN" class="cjeline">Talesov poučak</a>
+                <a href="KOOR.SUS" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[33]?></a>
+                <a href="LIN.FUN" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[34]?></a>
+                <a href="FUNK.APS" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[35]?></a>
+                <a href="SUST.LIN.JEDN" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[36]?></a>
             </div>
         </article>
         <article>
             <div class="gradiva">
-                <h2>TRIONOMETRIJA PRAVOKUTNOG TROKUTA</h2>
+                <h2><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[37]?></h2>
             </div>
             <div class="lekcije" style="display: none;">
-                <a href="KOOR.SUS" class="cjeline">Trigonometrijske funkcije šiljastog
-                    kuta</a>
-                <a href="LIN.FUN" class="cjeline">Računanje trigonometrijskih funkcija</a>
-                <a href="FUNK.APS" class="cjeline">Primjena trigonometrijskih funkcija</a>
+                <a href="KOOR.SUS" class="cjeline">T<?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[38]?></a>
+                <a href="LIN.FUN" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[39]?></a>
+                <a href="FUNK.APS" class="cjeline"><?php echo $xml->xpath("//Materials[@lang='$lang']/sekcija[@id='2']/artikl")[40]?></a>
             </div>
         </article>
     </section>
     <footer>
-        <p>Kontakt:&nbsp&nbsp
-            jstojic@tvz.hr &nbsp&nbsp vkravaica@tvz.hr &nbsp&nbsp dvrckovi@tvz.hr</p>
+        <p><?php echo $xml->xpath("//Materials[@lang='$lang']/futer[@id='1']/kontakt")[0]?></p>
     </footer>
     <script src="<?php echo ($directory_prefix . 'Scripts/main.js'); ?>"></script>
 </body>

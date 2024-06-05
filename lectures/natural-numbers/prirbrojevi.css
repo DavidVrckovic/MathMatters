@@ -142,7 +142,7 @@ body {
 
 h1{
   margin-bottom:-30px;
-  font-size: 6vw;
+  font-size: 4.5vw;
   margin-top:-20px;
   text-shadow: 2px 4px 2px #000000b4;
   color: #3aa5a5;
@@ -188,17 +188,16 @@ h2{
 }
 .box1_1 {
   padding-left:40px;
-  flex: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
   text-align:left;
 }
 .box2 {
-  flex: 50%;
+  flex-basis: 50%;
   text-align: center;
 }
-.box3 {
-  flex: 50%;
-  
-}
+
 .numb{
   text-align: center;
   border:5px solid rgb(172, 172, 172);
@@ -234,7 +233,7 @@ h2{
   
 }
 img.god{
-  width:80%;
+  width:60%;
 }
 img.trts{
   width:60%;
