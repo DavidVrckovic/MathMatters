@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Content xmlns="http://localhost/MathMatters"
-    xmlns:xs="https://www.w3.org/2001/XMLSchema-instance"
-    xs:schemaLocation="http://localhost/MathMatters content.xsd"
-    elementFormDefault="qualified">
+<Content>
 
     <!-- 
     MARK: NAVIGACIJA
