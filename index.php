@@ -168,10 +168,9 @@ require_once($directory_prefix . "php/main.php");
         <section class="prviSection">
             <article class="prviSectionLijevo">
                 <div class="naslov0">MathMatters</div>
-                <p class="paragraph1">pomoć srednjoškolcima pri učenju matematike</p>
-                <p class="paragraph2">Kliknite na razred koji pohađate i pristupite lekcijama koje trenutno
-                    obrađujete</p>
-                <div class="naslov1">Odaberi razred</div>
+                <p class="paragraph1"><?php echo $xml->xpath("//Početna[@lang='$lang']/sekcija[@id='1']/artikl")[0] ?></p>
+                <p class="paragraph2"><?php echo $xml->xpath("//Početna[@lang='$lang']/sekcija[@id='1']/artikl")[1] ?></p>
+                <div class="naslov1"><?php echo $xml->xpath("//Početna[@lang='$lang']/sekcija[@id='1']/artikl")[2] ?></div>
                 <div class="razredi">
                     <a href="lectures" class="broj">1.</a>
                     <a href="lectures" class="broj">2.</a>
@@ -196,16 +195,13 @@ require_once($directory_prefix . "php/main.php");
                 <img src="Images/icon _plus_v2.svg">
             </article>
             <article class="section2Desno">
-                <div class="naslov2">Matura 2024!</div>
+                <div class="naslov2"><?php echo $xml->xpath("//Početna[@lang='$lang']/sekcija[@id='2']/artikl")[0] ?></div>
                 <p class="paragraph3">
-                    Pripremite se za maturu.<br />Upoznajte se s ispitnim katalogom te usavršite svoje znanje na
-                    vrijeme...
+                <?php echo $xml->xpath("//Početna[@lang='$lang']/sekcija[@id='2']/artikl")[1] ?>
                 </p>
-                <a class="button2">MATURA 2024</a>
+                <a class="button2"><?php echo $xml->xpath("//Početna[@lang='$lang']/sekcija[@id='2']/artikl")[2] ?></a>
                 <p class="paragraph4">
-                    <span>...ili pronađite</span> <a href="#" class="zadaciLink"> zadatke iz
-                        prijašnjih
-                        matura</href></a>
+                <?php echo $xml->xpath("//Početna[@lang='$lang']/sekcija[@id='2']/artikl")[3] ?>
                 </p>
             </article>
         </section>
@@ -224,12 +220,12 @@ require_once($directory_prefix . "php/main.php");
                 </table>
             </article>
             <article class="section3Lijevo">
-                <div class="naslov3">Registrirajte se</div>
-                <label class="regHome" for="fname"><span class="rijeci">Ime</span><input type="text" id="fname" name="fname"></label>
-                <label class="regHome" for="email"><span class="rijeci">E-mail</span><input class="gore" type="email" id="email" name="email"></label>
-                <label class="regHome" for="pwd"><span class="rijeci">Lozinka</span><input class="gore" type="password" id="pwd" name="pwd"></label>
-                <input class="dole" type="submit" value="REGISTRIRAJ SE">
-                <span class="alreadyAcc">Već imate račun?<br><a href="#">Prijavi se</a></span>
+                <div class="naslov3"><?php echo $xml->xpath("//Početna[@lang='$lang']/sekcija[@id='3']/artikl")[0] ?></div>
+                <label class="regHome" for="fname"><span class="rijeci"><?php echo $xml->xpath("//Početna[@lang='$lang']/sekcija[@id='3']/artikl")[1] ?></span><input type="text" id="fname" name="fname"></label>
+                <label class="regHome" for="email"><span class="rijeci"><?php echo $xml->xpath("//Početna[@lang='$lang']/sekcija[@id='3']/artikl")[2] ?></span><input class="gore" type="email" id="email" name="email"></label>
+                <label class="regHome" for="pwd"><span class="rijeci"><?php echo $xml->xpath("//Početna[@lang='$lang']/sekcija[@id='3']/artikl")[3] ?></span><input class="gore" type="password" id="pwd" name="pwd"></label>
+                <input class="dole" type="submit" value="<?php echo $xml->xpath("//Početna[@lang='$lang']/sekcija[@id='3']/artikl")[4] ?>">
+                <span class="alreadyAcc"><?php echo $xml->xpath("//Početna[@lang='$lang']/sekcija[@id='3']/artikl")[5] ?><br><a href="#"><?php echo $xml->xpath("//Početna[@lang='$lang']/sekcija[@id='3']/artikl")[6] ?></a></span>
             </article>
             <article class="section3Desno">
                 <img src="Images/Group 100.svg">

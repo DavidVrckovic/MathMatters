@@ -42,18 +42,19 @@
         </sekcija>
         <sekcija id="2">
             <artikl id="naslov_1">Matura 2024!</artikl>
-            <artikl id="paragraf_1">Pripremite se za maturu. Upoznajte se s ispitnim katalogom te
+            <artikl id="paragraf_1">Pripremite se za maturu. &lt;br&gt; Upoznajte se s ispitnim katalogom te
                 usavršite svoje znanje na
                 vrijeme...</artikl>
             <artikl id="gumb">MATURA 2024</artikl>
-            <artikl id="paragraf_1">...ili pronađite zadatke iz
-                prijašnjih matura</artikl>
+            <artikl id="paragraf_1"> &lt;span&gt; ...ili pronađite &lt;/span&gt; &lt;a href="#" class="zadaciLink"&gt; zadatke iz
+                prijašnjih matura&lt;/a&gt;</artikl>
         </sekcija>
         <sekcija id="3">
             <artikl id="naslov">Registrirajte se</artikl>
             <artikl id="ime">Ime</artikl>
             <artikl id="e-mail">E-mail</artikl>
             <artikl id="lozinka">Lozinka</artikl>
+            <artikl id="registraj">REGISTRIRAJ SE</artikl>
             <artikl id="register">Već imate račun? Prijavi se</artikl>
         </sekcija>
     </Početna>
@@ -68,18 +69,20 @@
         </sekcija>
         <sekcija id="2">
             <artikl id="naslov_1">SAT for 2024!</artikl>
-            <artikl id="paragraf_1">Prepare for graduation. Familiarize yourself with the exam
+            <artikl id="paragraf_1">Prepare for graduation. &lt;br&gt; Familiarize yourself with the exam
                 catalog
                 and improve your knowledge in time...</artikl>
             <artikl id="gumb">SAT for 2024</artikl>
-            <artikl id="paragraf_1">...or find assignments from past SATs</artikl>
+            <artikl id="paragraf_1"> &lt;span&gt; ...or find &lt;/span&gt; &lt;a href="#" class="zadaciLink"&gt; assignments from past SATs &lt;/a&gt;</artikl>
         </sekcija>
         <sekcija id="3">
             <artikl id="naslov">Register</artikl>
             <artikl id="ime">Name</artikl>
             <artikl id="e-mail">E-mail</artikl>
             <artikl id="lozinka">Password</artikl>
-            <artikl id="register">Already have an account? Login</artikl>
+            <artikl id="registraj">REGISTER</artikl>
+            <artikl id="register">Already have an account? </artikl>
+            <artikl id="login">Login</artikl>
         </sekcija>
     </Početna>
 
