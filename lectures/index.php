@@ -39,7 +39,7 @@ require_once($directory_prefix . "php/main.php");
 
 <body>
     <!-- JS scripts -->
-    <script src="<?php echo ($directory_prefix . 'Scripts/main.js'); ?>"></script>
+
 
     <!-- Header & Navigation -->
     <header>
@@ -120,24 +120,12 @@ require_once($directory_prefix . "php/main.php");
             }
             ?>
 
-            <!-- Navigation link
-            <a class="nav_link" id="nav_options_link">
-
-                <form action="/action_page.php">
-                    <input type="text" placeholder="Search..." name="search">
-                    <button type="submit">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </form>
-
-            </a> -->
-
         </nav>
 
     </header>
 
 
-    <div class="clearfix">
+    <section class="clearfix">
         <h3>MathMatters</h3>
         <div class="container">
             <div class="box1">
@@ -147,68 +135,100 @@ require_once($directory_prefix . "php/main.php");
                 <h1>1.razred</h1>
             </div>
         </div>
-    </div>
-    <div class="gllekcije">
-        <h2>REALNI BROJEVI</h2>
-        <div class="selekcija">
-            <a href="natural-numbers" class="linklekcije"><button class="lekcije">Prirodni, cijeli i racionalni brojevi</button></a>
-            <a href="REALNI" class="linklekcije"><button class="lekcije">Realni brojevi</button></a>
-            <a href="INTER" class="linklekcije"><button class="lekcije">Intervali</button></a>
-            <a href="OPER.REAL" class="linklekcije"><button class="lekcije">Operacije s realnim brojevima</button></a>
-        </div>
-        <h2>POTENCIJE S CJELOBROJNIM EKSPONENTOM</h2>
-        <div class="selekcija">
-            <a href="POZ.EKSP" class="linklekcije"><button class="lekcije">Potencije s pozitivnim eksponentom</button></a>
-            <a href="POT.NEG" class="linklekcije"><button class="lekcije">Potencije s negativnim eksponentom</button></a>
-            <a href="ZNAN.ZAPIS" class="linklekcije"><button class="lekcije">Znanstveni zapis realnog broja</button></a>
-        </div>
-        <h2>ALGEBARSKI IZRAZI I RAZLOMCI</h2>
-        <div class="selekcija">
-            <a href="MONIPOL" class="linklekcije"><button class="lekcije">Monomi i polinomi</button></a>
-            <a href="MNOŽ.POL" class="linklekcije"><button class="lekcije">Množenje polinoma</button></a>
-            <a href="VR.ALG" class="linklekcije"><button class="lekcije">Vrijednost algebarskog izraza</button></a>
-            <a href="FAKT" class="linklekcije"><button class="lekcije">Faktorizacija</button></a>
-            <a href="ALG.RAZL" class="linklekcije"><button class="lekcije">Algebarski razlomci</button></a>
-        </div>
-        <h2>LINEARNE JEDNADŽBE</h2>
-        <div class="selekcija">
-            <a href="JEDNA" class="linklekcije"><button class="lekcije">Jednadžbe s jednom nepoznanicom</button></a>
-            <a href="JEAPS" class="linklekcije"><button class="lekcije">Jednadnžbe s apsolutnim vrijednostima</button></a>
-            <a href="JDVIJE" class="linklekcije"><button class="lekcije">Jednadžbe s dvije nepoznanice</button></a>
-            <a href="PRIMJ.JEDN" class="linklekcije"><button class="lekcije">Primjena jednadžbi</button></a>
-        </div>
-        <h2>LINEARNE NEJEDNADŽBE</h2>
-        <div class="selekcija">
-            <a href="NEJJEDNA" class="linklekcije"><button class="lekcije">Nejednadžbe s jednom nepoznanicom</button></a>
-            <a href="SUST.JEDN" class="linklekcije"><button class="lekcije">Sustavi jednadžbi</button></a>
-            <a href="SLOŽ.NEJ" class="linklekcije"><button class="lekcije">Složenije nejednadžbe</button></a>
-            <a href="NEJAPS" class="linklekcije"><button class="lekcije">Nejednadžbe s apsolutnim vrijednostima</button></a>
-            <a href="PRIMJ.NEJ" class="linklekcije"><button class="lekcije">Primjena nejednadžbi</button></a>
-        </div>
-        <h2>LINEARNE FUNKCIJE</h2>
-        <div class="selekcija">
-            <a href="KOOR.SUS" class="linklekcije"><button class="lekcije">Koordinantni sustav</button></a>
-            <a href="LIN.FUN" class="linklekcije"><button class="lekcije">Linearna funkcija</button></a>
-            <a href="FUNK.APS" class="linklekcije"><button class="lekcije">Funkcija s apsolutnim vrijednostima</button></a>
-            <a href="SUST.LIN.JEDN" class="linklekcije"><button class="lekcije">Sustavi linearnih jednadžbi</button></a>
-            <a href="PRIM.SUS.LIN.JEDN" class="linklekcije"><button class="lekcije">Primjena sustava linearnih
-                    jednadžbi</button></a>
-        </div>
-        <h2>SUKLADNOST I SLIČNOST</h2>
-        <div class="selekcija">
-            <a href="KOOR.SUS" class="linklekcije"><button class="lekcije">Karakteristične točke trokuta</button></a>
-            <a href="LIN.FUN" class="linklekcije"><button class="lekcije">Sukladnost</button></a>
-            <a href="FUNK.APS" class="linklekcije"><button class="lekcije">Sličnost</button></a>
-            <a href="SUST.LIN.JEDN" class="linklekcije"><button class="lekcije">Talesov poučak</button></a>
-        </div>
-        <h2>TRIONOMETRIJA PRAVOKUTNOG TROKUTA</h2>
-        <div class="selekcija">
-            <a href="KOOR.SUS" class="linklekcije"><button class="lekcije">Trigonometrijske funkcije šiljastog
-                    kuta</button></a>
-            <a href="LIN.FUN" class="linklekcije"><button class="lekcije">Računanje trigonometrijskih funkcija</button></a>
-            <a href="FUNK.APS" class="linklekcije"><button class="lekcije">Primjena trigonometrijskih funkcija</button></a>
-        </div>
-    </div>
+    </section>
+    <section class="gllekcije">
+        <article>
+            <div class="gradiva">
+                <h2>REALNI BROJEVI</h2>
+            </div>
+            <div class="lekcije" style="display: none;">
+                <a href="natural-numbers" class="cjeline">Prirodni, cijeli i racionalni brojevi</a>
+                <a href="REALNI" class="cjeline">Realni brojevi</a>
+                <a href="INTER" class="cjeline">Intervali</a>
+                <a href="OPER.REAL" class="cjeline">Operacije s realnim brojevima</a>
+            </div>
+        </article>
+        <article>
+            <div class="gradiva">
+                <h2>POTENCIJE S CJELOBROJNIM EKSPONENTOM</h2>
+            </div>
+            <div class="lekcije" style="display: none;">
+                <a href="POZ.EKSP" class="cjeline">Potencije s pozitivnim eksponentom</a>
+                <a href="POT.NEG" class="cjeline">Potencije s negativnim eksponentom</a>
+                <a href="ZNAN.ZAPIS" class="cjeline">Znanstveni zapis realnog broja</a>
+            </div>
+        </article>
+        <article>
+            <div class="gradiva">
+                <h2>ALGEBARSKI IZRAZI I RAZLOMCI</h2>
+            </div>
+            <div class="lekcije" style="display: none;">
+                <a href="MONIPOL" class="cjeline">Monomi i polinomi</a>
+                <a href="MNOŽ.POL" class="cjeline">Množenje polinoma</a>
+                <a href="VR.ALG" class="cjeline">Vrijednost algebarskog izraza</a>
+                <a href="FAKT" class="cjeline">Faktorizacija</a>
+                <a href="ALG.RAZL" class="cjeline">Algebarski razlomci</a>
+            </div>
+        </article>
+        <article>
+            <div class="gradiva">
+                <h2>LINEARNE JEDNADŽBE</h2>
+            </div>
+            <div class="lekcije" style="display: none;">
+                <a href="JEDNA" class="cjeline">Jednadžbe s jednom nepoznanicom</a>
+                <a href="JEAPS" class="cjeline">Jednadnžbe s apsolutnim vrijednostima</a>
+                <a href="JDVIJE" class="cjeline">Jednadžbe s dvije nepoznanice</a>
+                <a href="PRIMJ.JEDN" class="cjeline">Primjena jednadžbi</a>
+            </div>
+        </article>
+        <article>
+            <div class="gradiva">
+                <h2>LINEARNE NEJEDNADŽBE</h2>
+            </div>
+            <div class="lekcije" style="display: none;">
+                <a href="NEJJEDNA" class="cjeline">Nejednadžbe s jednom nepoznanicom</a>
+                <a href="SUST.JEDN" class="cjeline">Sustavi jednadžbi</a>
+                <a href="SLOŽ.NEJ" class="cjeline">Složenije nejednadžbe</a>
+                <a href="NEJAPS" class="cjeline">Nejednadžbe s apsolutnim vrijednostima</a>
+                <a href="PRIMJ.NEJ" class="cjeline">Primjena nejednadžbi</a>
+            </div>
+        </article>
+        <article>
+            <div class="gradiva">
+                <h2>LINEARNE FUNKCIJE</h2>
+            </div>
+            <div class="lekcije" style="display: none;">
+                <a href="KOOR.SUS" class="cjeline">Koordinantni sustav</a>
+                <a href="LIN.FUN" class="cjeline">Linearna funkcija</a>
+                <a href="FUNK.APS" class="cjeline">Funkcija s apsolutnim vrijednostima</a>
+                <a href="SUST.LIN.JEDN" class="cjeline">Sustavi linearnih jednadžbi</a>
+                <a href="PRIM.SUS.LIN.JEDN" class="cjeline">Primjena sustava linearnih
+                    jednadžbi</a>
+            </div>
+        </article>
+        <article>
+            <div class="gradiva">
+                <h2>SUKLADNOST I SLIČNOST</h2>
+            </div>
+            <div class="lekcije" style="display: none;">
+                <a href="KOOR.SUS" class="cjeline">Karakteristične točke trokuta</a>
+                <a href="LIN.FUN" class="cjeline">Sukladnost</a>
+                <a href="FUNK.APS" class="cjeline">Sličnost</a>
+                <a href="SUST.LIN.JEDN" class="cjeline">Talesov poučak</a>
+            </div>
+        </article>
+        <article>
+            <div class="gradiva">
+                <h2>TRIONOMETRIJA PRAVOKUTNOG TROKUTA</h2>
+            </div>
+            <div class="lekcije" style="display: none;">
+                <a href="KOOR.SUS" class="cjeline">Trigonometrijske funkcije šiljastog
+                    kuta</a>
+                <a href="LIN.FUN" class="cjeline">Računanje trigonometrijskih funkcija</a>
+                <a href="FUNK.APS" class="cjeline">Primjena trigonometrijskih funkcija</a>
+            </div>
+        </article>
+    </section>
     <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/1671dd2801571c4f13d09c809e95f8e3a1d41135e777ce958f3db0b0c8fce89e?" class="img1" />
     <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/4fe9ee691cd3bdc5f5c05a514ce59741cc2f1694fbb45766931dad8d6fdb1211?" class="img2" />
     <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/0ceef766cb45be3f36a2c09bc6a9e955b5f79921c3925d268b63d80c0686519e?" class="img3" />
@@ -217,7 +237,7 @@ require_once($directory_prefix . "php/main.php");
         <p>Kontakt:&nbsp&nbsp
             jstojic@tvz.hr &nbsp&nbsp vkravaica@tvz.hr &nbsp&nbsp dvrckovi@tvz.hr</p>
     </footer>
-
+    <script src="<?php echo ($directory_prefix . 'Scripts/main.js'); ?>"></script>
 </body>
 
 </html>

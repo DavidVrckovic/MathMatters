@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hateemel>
+
+    <glavurda>
+        <titl>MathMatters | Materials</titl>
+    </glavurda>
+
+    <tijelo>
+        <navigacija>
+            <naslovnica>Homepage</naslovnica>
+            <razredi>Classes</razredi>
+            <gradivo>Materials</gradivo>
+            <primjeri>SATs</primjeri>
+            <eko_0>Login</eko_0>
+            <eko_1>Register</eko_1>
+            <eko_2>Account</eko_2>
+        </navigacija>
+            <sekcija_1>
+                <naslov_0>MathMatters</naslov_0>
+                <naslov_1>1st Grade</naslov_1>
+            </sekcija_1>
+            <sekcija_2>
+                <artikl_1>
+                    <naslov_3>REAL NUMBERS</naslov_3>
+                    <lekcija_1>Natural, intiger and rational numbers</lekcija_1>
+                    <lekcija_2>Real numbers</lekcija_2>
+                    <lekcija_3>Intervals</lekcija_3>
+                    <lekcija_4>Operations with real numbers</lekcija_4>
+                </artikl_1>
+                <artikl_2>
+                    <naslov_3>POTENTIALS WITH INTEGER EXPONENTS</naslov_3>
+                    <lekcija_1>Potencies with positive exponent</lekcija_1>
+                    <lekcija_2>Potencies with negative exponent</lekcija_2>
+                    <lekcija_3>Scientific notation of a real number</lekcija_3>
+                </artikl_2>
+                <artikl_3>
+                    <naslov_3>ALGEBRAIC EXPRESSIONS AND FRACTIONS</naslov_3>
+                    <lekcija_1>Monomials and polynomials</lekcija_1>
+                    <lekcija_2>Multiplying polynomials</lekcija_2>
+                    <lekcija_3>The value of an algebraic expression</lekcija_3>
+                    <lekcija_4>Factorization</lekcija_4>
+                    <lekcija_5>Algebra fractions</lekcija_5>
+                </artikl_3>
+                <artikl_4>
+                    <naslov_3>LINEAR EQUATIONS</naslov_3>
+                    <lekcija_1>Equations with one variable</lekcija_1>
+                    <lekcija_2>Equations with absolute values</lekcija_2>
+                    <lekcija_3>Equations with two variables</lekcija_3>
+                    <lekcija_4>The application of equations</lekcija_4>
+                </artikl_4>
+                <artikl_5>
+                    <naslov_3>LINEAR INEQUATIONS</naslov_3>
+                    <lekcija_1>Inequalities with one variable</lekcija_1>
+                    <lekcija_2>Equation systems</lekcija_2>
+                    <lekcija_3>More complex inequalities</lekcija_3>
+                    <lekcija_4>Inequalities with absolute values</lekcija_4>
+                    <lekcija_5>The application of inequalities</lekcija_5>
+                </artikl_5>
+                <artikl_6>
+                    <naslov_3>LINEAR FUNCTIONS</naslov_3>
+                    <lekcija_1>Coordinate system</lekcija_1>
+                    <lekcija_2>Linear function</lekcija_2>
+                    <lekcija_3>A function with absolute values</lekcija_3>
+                    <lekcija_4>Systems of linear equations</lekcija_4>
+                    <lekcija_5>Application of the system of linear equations</lekcija_5>
+                </artikl_6>
+                <artikl_7>
+                    <naslov_3>COMPLIANCE AND SIMILARITY</naslov_3>
+                    <lekcija_1>Characteristic points of a triangle</lekcija_1>
+                    <lekcija_2>Compliance</lekcija_2>
+                    <lekcija_3>Similarity</lekcija_3>
+                    <lekcija_4>The lesson of Thales</lekcija_4>
+                </artikl_7>
+                <artikl_8>
+                    <naslov_3>TRIGONOMETRY OF A RIGHT-ANGLED TRIANGLE</naslov_3>
+                    <lekcija_1>Trigonometric functions of acute angles</lekcija_1>
+                    <lekcija_2>Trigonometric functions calculation</lekcija_2>
+                    <lekcija_3>Application of trigonometric functions</lekcija_3>
+                </artikl_8>
+            </sekcija_2>
+            <futer>
+                <kontakt>Contact: jstojic@tvz.hr vkravaica@tvz.hr dvrckovi@tvz.hr</kontakt>
+            </futer>
+    </tijelo>
+</hateemel>

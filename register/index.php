@@ -130,18 +130,6 @@ if (isset($_SESSION["loggedin"])) {
             }
             ?>
 
-            <!-- Navigation link
-            <a class="nav_link" id="nav_options_link">
-
-                <form action="/action_page.php">
-                    <input type="text" placeholder="Search..." name="search">
-                    <button type="submit">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </form>
-
-            </a> -->
-
         </nav>
 
     </header>

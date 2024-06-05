@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hateemel>
+
+    <glavurda>
+        <titl>MathMatters | Gradivo</titl>
+    </glavurda>
+
+    <tijelo>
+        <navigacija>
+            <naslovnica>Naslovnica</naslovnica>
+            <razredi>Razredi</razredi>
+            <gradivo>Gradivo</gradivo>
+            <primjeri>Primijeri s mature</primjeri>
+            <eko_0>Prijavi se</eko_0>
+            <eko_1>Registriraj se</eko_1>
+            <eko_2>Račun</eko_2>
+        </navigacija>
+            <sekcija_1>
+                <naslov_0>MathMatters</naslov_0>
+                <naslov_1>1. Razred</naslov_1>
+            </sekcija_1>
+            <sekcija_2>
+                <artikl_1>
+                    <naslov_3>REALNI BROJEVI</naslov_3>
+                    <lekcija_1>Prirodni, cijeli i racionalni brojevi</lekcija_1>
+                    <lekcija_2>Realni brojevi</lekcija_2>
+                    <lekcija_3>Intervali</lekcija_3>
+                    <lekcija_4>Operacije s realnim brojevima</lekcija_4>
+                </artikl_1>
+                <artikl_2>
+                    <naslov_3>POTENCIJE S CJELOBROJNIM EKSPONENTOM</naslov_3>
+                    <lekcija_1>Potencije s pozitivnim eksponentom</lekcija_1>
+                    <lekcija_2>Potencije s negativnim eksponentom</lekcija_2>
+                    <lekcija_3>Znanstveni zapis realnog broja</lekcija_3>
+                </artikl_2>
+                <artikl_3>
+                    <naslov_3>ALGEBARSKI IZRAZI I RAZLOMCI</naslov_3>
+                    <lekcija_1>Monomi i polinomi</lekcija_1>
+                    <lekcija_2>Množenje polinoma</lekcija_2>
+                    <lekcija_3>Vrijednost algebarskog izraza</lekcija_3>
+                    <lekcija_4>Faktorizacija</lekcija_4>
+                    <lekcija_5>Algebarski razlomci</lekcija_5>
+                </artikl_3>
+                <artikl_4>
+                    <naslov_3>LINEARNE JEDNADŽBE</naslov_3>
+                    <lekcija_1>Jednadžbe s jednom nepoznanicom</lekcija_1>
+                    <lekcija_2>Jednadžbe s apsolutnim vrijednostima</lekcija_2>
+                    <lekcija_3>Jednadžbe s dvije nepoznanice</lekcija_3>
+                    <lekcija_4>Primjena jednadžbi</lekcija_4>
+                </artikl_4>
+                <artikl_5>
+                    <naslov_3>LINEARNE NEJEDNADŽBE</naslov_3>
+                    <lekcija_1>Nejednadžbe s jednom nepoznanicom</lekcija_1>
+                    <lekcija_2>Sustavi jednadžbi</lekcija_2>
+                    <lekcija_3>Složenije nejednadžbe</lekcija_3>
+                    <lekcija_4>Nejednadžbe s apsolutnim vrijednostima</lekcija_4>
+                    <lekcija_5>Primjena nejednadžbi</lekcija_5>
+                </artikl_5>
+                <artikl_6>
+                    <naslov_3>LINEARNE FUNKCIJE</naslov_3>
+                    <lekcija_1>Koordinantni sustav</lekcija_1>
+                    <lekcija_2>Linearna funkcija</lekcija_2>
+                    <lekcija_3>Funkcija s apsolutnim vrijednostima</lekcija_3>
+                    <lekcija_4>Sustavi linearnih jednadžbi</lekcija_4>
+                    <lekcija_5>Primjena sustava linearnih jednadžbi</lekcija_5>
+                </artikl_6>
+                <artikl_7>
+                    <naslov_3>SUKLADNOST I SLIČNOST</naslov_3>
+                    <lekcija_1>Karakteristične točke trokuta</lekcija_1>
+                    <lekcija_2>Sukladnost</lekcija_2>
+                    <lekcija_3>Sličnost</lekcija_3>
+                    <lekcija_4>Talesov poučak</lekcija_4>
+                </artikl_7>
+                <artikl_8>
+                    <naslov_3>TRIGONOMETRIJA PRAVOKUTNOG TROKUTA</naslov_3>
+                    <lekcija_1>Trigonometrijske funkcije šiljastog kuta</lekcija_1>
+                    <lekcija_2>Računanje trigonometrijskih funkcija</lekcija_2>
+                    <lekcija_3>Primjena trigonometrijskih funkcija</lekcija_3>
+                </artikl_8>
+            </sekcija_2>
+            <futer>
+                <kontakt>Kontakt: jstojic@tvz.hr vkravaica@tvz.hr dvrckovi@tvz.hr</kontakt>
+            </futer>
+    </tijelo>
+</hateemel>

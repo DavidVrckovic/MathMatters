@@ -26,17 +26,14 @@
 }
 
 /* Makes a document fit the whole screen */
-body {
-  margin: 0;
-}
 
+* {
+  box-sizing: border-box;
+}
 
 p.error {
   color: red;
 }
-
-
-
 
 body {
   margin: 0;
@@ -44,6 +41,7 @@ body {
   font-weight: bold;
   background-color: #097878;
   color: white;
+  height: auto;
 }
 
 h3 {
@@ -104,36 +102,6 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-.search-container{
-  float: right;
-  padding: 6px 10px;
-  margin-top: 8px;
-  margin-right: 16 px;
-  font-size: 17px;
-  border:none;
-  cursor: pointer;
-}
-
-.search-container button {
-  float: right;
-  padding: 10px;
-  margin-right: 16 px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-}
-.search-container button:hover {
-  background: #ccc;
-}
-input[type=text] {
-  padding: 10px;
-  font-size: 17px;
-  border:1px solid grey;
-}
-* {
-  box-sizing: border-box;
-}
 
 .container {
   width: 100%;
@@ -146,7 +114,7 @@ input[type=text] {
 .box1 {
   padding-top:70px;
   flex: 65%;
-  height: 200px;
+  height: auto;
   text-align: center;
   overflow: hidden;
 }
@@ -174,7 +142,6 @@ h1 {
 }
 
 .clearfix::after {
-  content: "";
   clear: both;
   display: table;
 }
@@ -182,35 +149,53 @@ h1 {
 .gllekcije {
   display: flex;
   flex-direction: column;
-  padding-left:30px;
+  margin: auto;
+  width:90%;
 }
 
-.selekcija {
-  display: flex;
+.lekcije_active {
   flex-direction: column;
-  flex:1;
+  height: auto;
 }
 
-.lekcije {
+.gradiva {
+  width: 80%;
+}
+
+h2{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+h2::after {
+  content: "\003c";
+  float:right;
+  padding-right: 15px;
+}
+
+.cjeline {
   font-family: "Montserrat", Helvetica, sans-serif;
   font-weight: bold;
   color: black;
-  font-size: 25px;
+  font-size: x-large;
   border-radius: 74px;
   border: none;
-  text-align: left;
   background-color: #d5edff;
-  flex-grow: 1;
-  width: 50%;
+  width: 60%;
   padding: 15px 39px;
-  margin-bottom: 10px;
   cursor: pointer;
-  margin-left: 20px;
+  margin: 10px auto 10px 10%;
+  text-decoration: none;
 }
 
-.lekcije:hover {
+.cjeline:hover {
   background-color: #004b4bb6;
   color: white;
+  cursor:pointer;
 }
 
 .img1 {

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hateemel>
+
+    <glavurda>
+        <titl>MathMatters | Natural numbers</titl>
+    </glavurda>
+
+    <tijelo>
+        <navigacija>
+            <naslovnica>Homepage</naslovnica>
+            <razredi>Classes</razredi>
+            <gradivo>Materials</gradivo>
+            <primjeri>SATs</primjeri>
+            <eko_0>Login</eko_0>
+            <eko_1>Register</eko_1>
+            <eko_2>Accont</eko_2>
+        </navigacija>
+
+        <sekcija_1>
+            <naslov_0>MathMatters</naslov_0>
+            <naslov_1>Real numbers > Natural, integer, and rational numbers</naslov_1>
+        </sekcija_1>
+
+        <sekcija_2>
+            <naslov_2>NATURAL, INTEGER AND RATIONAL NUMBERS</naslov_2>
+            <lekcija_3>NATURAL NUMBERS</lekcija_3>
+            <paragraf_0>Natural numbers are those that go from 1 to positive infinity, i.e. 1, 2, 3, 4... Together they make up the set N. If we want to say that the number 10 is part of the set N, we will write it like this: 10 E N.</paragraf_0>
+            <gumb_0>N = {0, 1, 2, 3, 4... infinity}</gumb_0>
+            <paragraf_1>Image 1. Counting the years on the stump determines the number of years of the tree</paragraf_1>
+        </sekcija_2>
+
+        <sekcija_3>
+            <naslov_3>INTEGER NUMBERS</naslov_3>
+            <paragraf_2>Integers are all natural numbers, zero and all natural numbers with a minus in front. Together they form the set Z.</paragraf_2>
+            <gumb_1>Z = {-2, -1, 0, 1, 2, 3... infinity}</gumb_1>
+            <paragraf_3>Image 2. Whole numbers are used to indicate floors, most often in garages.</paragraf_3>
+        </sekcija_3>
+
+        <sekcija_4>
+            <naslov_4>RATIONAL NUMBERS</naslov_4>
+            <paragraf_4>A RATIONAL NUMBER is a number that can be written in the form of a fraction whose numerator is a whole number and whose denominator is a natural number.</paragraf_4>
+            <gumb_2>Q = {-1/2, -0.3, 0, 1/7, 2... infinity}</gumb_2>
+            <paragraf_5>Image 3. Rational numbers can be used for the purpose of dividing the cake into equal pieces.</paragraf_5>
+        </sekcija_4>
+
+        <sekcija_5>
+            <naslov_5>EVEN AND ODD NUMBERS</naslov_5>
+            <paragraf_6>Even numbers are those that are divisible by 2 without a remainder, and odd numbers are those that are not</paragraf_6>
+            <paran>EVEN</paran>
+            <neparan>ODD</neparan>
+        </sekcija_5>
+
+        <sekcija_6>
+            <naslov_6>SIMPLE AND COMPLEX NUMBERS</naslov_6>
+            <paragraf_7>A prime number is one that has 2 divisors, and a complex number is one that has more than 2</paragraf_7>
+            <prost>is divisible by 1 and 2 so it is SIMPLE</prost>
+            <složen>is divisible by 4, 2, 1 so it is COMPLEX</složen>
+            <jedan>is divisible ONLY by 1 so it is NEITHER SIMPLE NOR COMPLEX</jedan>
+        </sekcija_6>
+
+        <sekcija_7>
+            <naslov_7>EXTRA MATERIAL</naslov_7>
+            <paragraf_8>Greatest Common Divisor (GCD) and Least Common Multiple (LCG): These concepts are crucial in number theory. NZD is the largest number by which 2 numbers can be divided, while NZV is the smallest number that is a multiple of both numbers.</paragraf_8>
+            <paragraf_9>The greatest common divisor</paragraf_9>
+            <način_1>1st method</način_1>
+            <primjer>We want to find the greatest common divisor of the numbers 48 and 72. First, let's divide the numbers into prime factors.</primjer>
+            <paragraf_10>The marked parts represent prime factors common to the numbers. </paragraf_10>
+            <paragraf_10.1>The product of these factors is their greatest common factor</paragraf_10.1>
+            <način_2>2nd method</način_2>
+            <paragraf_11>We can find the divisor in a faster way by dividing numbers into simple factors simultaneously.</paragraf_11>
+            <paragraf_12>Least Common Multiple</paragraf_12>
+            <paragraf_13>NZV određujemo tako da za svaki od faktora iz prošlog primjera pogledamo koliko se puta ponavljaju pri rastavu brojeva.
+                Onoliko puta koliWe determine the LCG by looking for each of the factors from the previous example, how many times they are repeated when dividing the numbers. The number of times that is repeated the most will be used as a factor in the common multiple.ko se najviše ponavlja će se koristiti kao faktor u zajedničkom višekratniku.</paragraf_13>
+            <paragraf_14>Uin this case, the number 2 appears at most four times, and the number 3 twice, and the lowest common multiple is the product of these numbers. </paragraf_14>
+            </sekcija_7>
+
+        <futer>
+            <kontakt>Contact: jstojic@tvz.hr vkravaica@tvz.hr dvrckovi@tvz.hr</kontakt>
+        </futer>
+    </tijelo>
+</hateemel>
