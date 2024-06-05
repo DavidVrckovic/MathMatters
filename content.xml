@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Content xmlns="localhost/MathMatters"
+    xmlns:xs="https://www.w3.org/2001/XMLSchema-instance"
+    xs:schemaLocation="localhost/MathMatters content.xsd"
+    elementFormDefault="qualified">
+
+
+    <Navigacija lang="hr">
+
+        <NavLink id="home">Naslovnica</NavLink>
+        <NavLink id="classes">Razredi</NavLink>
+        <NavLink id="lectures">Gradivo</NavLink>
+        <NavLink id="matura">Primijeri s mature</NavLink>
+        <NavLink id="login">Prijavi se</NavLink>
+        <NavLink id="register">Registriraj se</NavLink>
+        <NavLink id="account">Račun</NavLink>
+
+    </Navigacija>
+
+    <Navigacija lang="en">
+
+        <NavLink id="home">Home</NavLink>
+        <NavLink id="classes">Classes</NavLink>
+        <NavLink id="lectures">Materials</NavLink>
+        <NavLink id="matura">SATs</NavLink>
+        <NavLink id="login">Login</NavLink>
+        <NavLink id="register">Register</NavLink>
+        <NavLink id="account">Account</NavLink>
+
+    </Navigacija>
+
+
+    <Početna lang="hr">
+        <glavno>
+            <sekcija_1>
+                <artikl>
+                    <naslov_0>MathMatters</naslov_0>
+                    <paragraf_1>pomoć srednjoškolcima pri učenju matematike</paragraf_1>
+                    <paragraf_2>Kliknite na razred koji pohađate i pristupite lekcijama koje
+                        trenutno obrađujete</paragraf_2>
+                    <naslov_1>Odaberi razred</naslov_1>
+                </artikl>
+            </sekcija_1>
+            <sekcija_2>
+                <artikl>
+                    <naslov_2>Matura 2024!</naslov_2>
+                    <paragraf_3>Pripremite se za maturu. Upoznajte se s ispitnim katalogom te
+                        usavršite svoje znanje na
+                        vrijeme...</paragraf_3>
+                    <gumb>MATURA 2024</gumb>
+                    <paragraf_4>...ili pronađite zadatke iz
+                        prijašnjih matura</paragraf_4>
+                </artikl>
+            </sekcija_2>
+            <sekcija_3>
+                <artikl>
+                    <naslov_3>Registrirajte se</naslov_3>
+                    <ime>Ime</ime>
+                    <e-mail>E-mail</e-mail>
+                    <lozinka>Lozinka</lozinka>
+                    <register>Već imate račun? Prijavi se</register>
+                </artikl>
+            </sekcija_3>
+        </glavno>
+    </Početna>
+
+    <Početna lang="en">
+        <glavno>
+            <sekcija_1>
+                <artikl>
+                    <naslov_0>MathMatters</naslov_0>
+                    <paragraf_1>helping high school students learn mathematics</paragraf_1>
+                    <paragraf_2>Click on the class you are attending and access the lessons you are
+                        currently working on</paragraf_2>
+                    <naslov_1>Choose a class</naslov_1>
+                </artikl>
+            </sekcija_1>
+            <sekcija_2>
+                <artikl>
+                    <naslov_2>SAT for 2024!</naslov_2>
+                    <paragraf_3>Prepare for graduation. Familiarize yourself with the exam catalog
+                        and improve your knowledge in time...</paragraf_3>
+                    <gumb>SAT for 2024</gumb>
+                    <paragraf_4>...or find assignments from past SATs</paragraf_4>
+                </artikl>
+            </sekcija_2>
+            <sekcija_3>
+                <artikl>
+                    <naslov_3>Register</naslov_3>
+                    <ime>Name</ime>
+                    <e-mail>E-mail</e-mail>
+                    <lozinka>Password</lozinka>
+                    <register>Already have an account? Login</register>
+                </artikl>
+            </sekcija_3>
+        </glavno>
+    </Početna>
+
+
+</Content>
