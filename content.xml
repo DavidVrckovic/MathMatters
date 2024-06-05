@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Content xmlns="localhost/MathMatters"
+<Content xmlns="http://localhost/MathMatters"
     xmlns:xs="https://www.w3.org/2001/XMLSchema-instance"
-    xs:schemaLocation="localhost/MathMatters content.xsd"
+    xs:schemaLocation="http://localhost/MathMatters content.xsd"
     elementFormDefault="qualified">
 
-
+    <!-- 
+    MARK: NAVIGACIJA
+    -->
     <Navigacija lang="hr">
 
         <NavLink id="home">Naslovnica</NavLink>
@@ -31,71 +33,426 @@
     </Navigacija>
 
 
+    <!-- 
+    MARK: POČETNA
+    -->
     <Početna lang="hr">
-        <glavno>
-            <sekcija_1>
-                <artikl>
-                    <naslov_0>MathMatters</naslov_0>
-                    <paragraf_1>pomoć srednjoškolcima pri učenju matematike</paragraf_1>
-                    <paragraf_2>Kliknite na razred koji pohađate i pristupite lekcijama koje
-                        trenutno obrađujete</paragraf_2>
-                    <naslov_1>Odaberi razred</naslov_1>
-                </artikl>
-            </sekcija_1>
-            <sekcija_2>
-                <artikl>
-                    <naslov_2>Matura 2024!</naslov_2>
-                    <paragraf_3>Pripremite se za maturu. Upoznajte se s ispitnim katalogom te
-                        usavršite svoje znanje na
-                        vrijeme...</paragraf_3>
-                    <gumb>MATURA 2024</gumb>
-                    <paragraf_4>...ili pronađite zadatke iz
-                        prijašnjih matura</paragraf_4>
-                </artikl>
-            </sekcija_2>
-            <sekcija_3>
-                <artikl>
-                    <naslov_3>Registrirajte se</naslov_3>
-                    <ime>Ime</ime>
-                    <e-mail>E-mail</e-mail>
-                    <lozinka>Lozinka</lozinka>
-                    <register>Već imate račun? Prijavi se</register>
-                </artikl>
-            </sekcija_3>
-        </glavno>
+        <sekcija id="1">
+            <artikl id="paragraf_1">pomoć srednjoškolcima pri učenju matematike</artikl>
+            <artikl id="paragraf_2">Kliknite na razred koji pohađate i pristupite lekcijama koje
+                trenutno obrađujete</artikl>
+            <artikl id="naslov_2">Odaberi razred</artikl>
+        </sekcija>
+        <sekcija id="2">
+            <artikl id="naslov_1">Matura 2024!</artikl>
+            <artikl id="paragraf_1">Pripremite se za maturu. Upoznajte se s ispitnim katalogom te
+                usavršite svoje znanje na
+                vrijeme...</artikl>
+            <artikl id="gumb">MATURA 2024</artikl>
+            <artikl id="paragraf_1">...ili pronađite zadatke iz
+                prijašnjih matura</artikl>
+        </sekcija>
+        <sekcija id="3">
+            <artikl id="naslov">Registrirajte se</artikl>
+            <artikl id="ime">Ime</artikl>
+            <artikl id="e-mail">E-mail</artikl>
+            <artikl id="lozinka">Lozinka</artikl>
+            <artikl id="register">Već imate račun? Prijavi se</artikl>
+        </sekcija>
     </Početna>
 
     <Početna lang="en">
-        <glavno>
-            <sekcija_1>
-                <artikl>
-                    <naslov_0>MathMatters</naslov_0>
-                    <paragraf_1>helping high school students learn mathematics</paragraf_1>
-                    <paragraf_2>Click on the class you are attending and access the lessons you are
-                        currently working on</paragraf_2>
-                    <naslov_1>Choose a class</naslov_1>
-                </artikl>
-            </sekcija_1>
-            <sekcija_2>
-                <artikl>
-                    <naslov_2>SAT for 2024!</naslov_2>
-                    <paragraf_3>Prepare for graduation. Familiarize yourself with the exam catalog
-                        and improve your knowledge in time...</paragraf_3>
-                    <gumb>SAT for 2024</gumb>
-                    <paragraf_4>...or find assignments from past SATs</paragraf_4>
-                </artikl>
-            </sekcija_2>
-            <sekcija_3>
-                <artikl>
-                    <naslov_3>Register</naslov_3>
-                    <ime>Name</ime>
-                    <e-mail>E-mail</e-mail>
-                    <lozinka>Password</lozinka>
-                    <register>Already have an account? Login</register>
-                </artikl>
-            </sekcija_3>
-        </glavno>
+        <sekcija id="1">
+            <artikl id="paragraf_1">helping high school students learn mathematics</artikl>
+            <artikl id="paragraf_2">Click on the class you are attending and access the lessons you
+                are
+                currently working on</artikl>
+            <artikl id="naslov_2">Choose a class</artikl>
+        </sekcija>
+        <sekcija id="2">
+            <artikl id="naslov_1">SAT for 2024!</artikl>
+            <artikl id="paragraf_1">Prepare for graduation. Familiarize yourself with the exam
+                catalog
+                and improve your knowledge in time...</artikl>
+            <artikl id="gumb">SAT for 2024</artikl>
+            <artikl id="paragraf_1">...or find assignments from past SATs</artikl>
+        </sekcija>
+        <sekcija id="3">
+            <artikl id="naslov">Register</artikl>
+            <artikl id="ime">Name</artikl>
+            <artikl id="e-mail">E-mail</artikl>
+            <artikl id="lozinka">Password</artikl>
+            <artikl id="register">Already have an account? Login</artikl>
+        </sekcija>
     </Početna>
 
+    <!-- 
+    MARK: REGISTER
+    -->
+    <Register lang="hr">
+        <sekcija id="1">
+            <artikl id="naslov_1">REGISTRACIJA</artikl>
+            <artikl id="paragraf_1">Već imate račun?</artikl>
+            <artikl id="link">Prijavite se</artikl>
+        </sekcija>
+        <sekcija id="2">
+            <artikl id="forma_1">Ime: </artikl>
+            <artikl id="forma_2">Prezime: </artikl>
+            <artikl id="forma_3">E-adresa: </artikl>
+            <artikl id="forma_4">Lozinka: </artikl>
+            <artikl id="forma_5">Ponoviti lozinku: </artikl>
+            <artikl id="gumb">Registriraj se</artikl>
+        </sekcija>
+    </Register>
+
+    <Register lang="en">
+        <sekcija id="1">
+            <artikl id="naslov_1">REGISTER</artikl>
+            <artikl id="paragraf_1">Already have an account?</artikl>
+            <artikl id="link">Login</artikl>
+        </sekcija>
+        <sekcija id="2">
+            <artikl id="forma_1">Name: </artikl>
+            <artikl id="forma_2">Surname: </artikl>
+            <artikl id="forma_3">E-mail: </artikl>
+            <artikl id="forma_4">Password: </artikl>
+            <artikl id="forma_5">Repeat password: </artikl>
+            <artikl id="gumb">Register</artikl>
+        </sekcija>
+    </Register>
+
+    <!-- 
+    MARK: LOGIN
+    -->
+    <Login lang="hr">
+        <sekcija id="1">
+            <artikl id="naslov_1">PRIJAVA</artikl>
+            <artikl id="paragraf_1">Nemate račun?</artikl>
+            <artikl id="link">Registrirajte se</artikl>
+        </sekcija>
+        <sekcija id="2">
+            <artikl id="forma_1">E-adresa: </artikl>
+            <artikl id="forma_2">Lozinka: </artikl>
+            <artikl id="forma_3">Zapamti moju prijavu</artikl>
+            <artikl id="gumb">Prijavi se</artikl>
+        </sekcija>
+    </Login>
+
+    <Login lang="en">
+        <sekcija id="1">
+            <artikl id="naslov_1">LOGIN</artikl>
+            <artikl id="paragraf_1">Don't have an account?</artikl>
+            <artikl id="link">Register</artikl>
+        </sekcija>
+        <sekcija id="2">
+            <artikl id="forma_1">E-mail: </artikl>
+            <artikl id="forma_2">Password: </artikl>
+            <artikl id="forma_3">Remember me</artikl>
+            <artikl id="gumb">Login</artikl>
+        </sekcija>
+    </Login>
+
+    <!-- 
+    MARK: MATERIJALI
+    -->
+    <Materials id="hr">
+        <sekcija_1>
+            <artikl id="naslov_2">1. Razred</artikl>
+        </sekcija_1>
+        <sekcija_2>
+            <artikl id="naslov_1">REALNI BROJEVI</artikl>
+            <artikl id="lekcija_1">Prirodni, cijeli i racionalni brojevi</artikl>
+            <artikl id="lekcija_2">Realni brojevi</artikl>
+            <artikl id="lekcija_3">Intervali</artikl>
+            <artikl id="lekcija_4">Operacije s realnim brojevima</artikl>
+
+            <artikl id="naslov_2">POTENCIJE S CJELOBROJNIM EKSPONENTOM</artikl>
+            <artikl id="lekcija_5">Potencije s pozitivnim eksponentom</artikl>
+            <artikl id="lekcija_6">Potencije s negativnim eksponentom</artikl>
+            <artikl id="lekcija_7">Znanstveni zapis realnog broja</artikl>
+
+            <artikl id="naslov_3">ALGEBARSKI IZRAZI I RAZLOMCI</artikl>
+            <artikl id="lekcija_8">Monomi i polinomi</artikl>
+            <artikl id="lekcija_9">Množenje polinoma</artikl>
+            <artikl id="lekcija_10">Vrijednost algebarskog izraza</artikl>
+            <artikl id="lekcija_11">Faktorizacija</artikl>
+            <artikl id="lekcija_12">Algebarski razlomci</artikl>
+
+            <artikl id="naslov_4">LINEARNE JEDNADŽBE</artikl>
+            <artikl id="lekcija_13">Jednadžbe s jednom nepoznanicom</artikl>
+            <artikl id="lekcija_14">Jednadžbe s apsolutnim vrijednostima</artikl>
+            <artikl id="lekcija_15">Jednadžbe s dvije nepoznanice</artikl>
+            <artikl id="lekcija_16">Primjena jednadžbi</artikl>
+
+            <artikl id="naslov_5">LINEARNE NEJEDNADŽBE</artikl>
+            <artikl id="lekcija_17">Nejednadžbe s jednom nepoznanicom</artikl>
+            <artikl id="lekcija_18">Sustavi jednadžbi</artikl>
+            <artikl id="lekcija_19">Složenije nejednadžbe</artikl>
+            <artikl id="lekcija_20">Nejednadžbe s apsolutnim vrijednostima</artikl>
+            <artikl id="lekcija_21">Primjena nejednadžbi</artikl>
+
+            <artikl id="naslov_6">LINEARNE FUNKCIJE</artikl>
+            <artikl id="lekcija_22">Koordinantni sustav</artikl>
+            <artikl id="lekcija_23">Linearna funkcija</artikl>
+            <artikl id="lekcija_24">Funkcija s apsolutnim vrijednostima</artikl>
+            <artikl id="lekcija_25">Sustavi linearnih jednadžbi</artikl>
+            <artikl id="lekcija_26">Primjena sustava linearnih jednadžbi</artikl>
+
+            <artikl id="naslov_7">SUKLADNOST I SLIČNOST</artikl>
+            <artikl id="lekcija_27">Karakteristične točke trokuta</artikl>
+            <artikl id="lekcija_28">Sukladnost</artikl>
+            <artikl id="lekcija_29">Sličnost</artikl>
+            <artikl id="lekcija_30">Talesov poučak</artikl>
+
+            <artikl id="naslov_8">TRIGONOMETRIJA PRAVOKUTNOG TROKUTA</artikl>
+            <artikl id="">Trigonometrijske funkcije šiljastog kuta</artikl>
+            <artikl id="">Računanje trigonometrijskih funkcija</artikl>
+            <artikl id="">Primjena trigonometrijskih funkcija</artikl>
+        </sekcija_2>
+        <futer>
+            <kontakt>Kontakt: jstojic@tvz.hr vkravaica@tvz.hr dvrckovi@tvz.hr</kontakt>
+        </futer>
+    </Materials>
+
+    <Materials id="en">
+        <sekcija_1>
+            <artikl id="naslov_2">1st Grade</artikl>
+        </sekcija_1>
+        <sekcija_2>
+            <artikl id="naslov_1">REAL NUMBERS</artikl>
+            <artikl id="lekcija_1">Natural, intiger and rational numbers</artikl>
+            <artikl id="lekcija_2">Real numbers</artikl>
+            <artikl id="lekcija_3">Intervals</artikl>
+            <artikl id="lekcija_4">Operations with real numbers</artikl>
+
+            <artikl id="naslov_2">POTENTIALS WITH INTEGER EXPONENTS</artikl>
+            <artikl id="lekcija_5">Potencies with positive exponent</artikl>
+            <artikl id="lekcija_6">Potencies with negative exponent</artikl>
+            <artikl id="lekcija_7">Scientific notation of a real number</artikl>
+
+            <artikl id="naslov_3">ALGEBRAIC EXPRESSIONS AND FRACTIONS</artikl>
+            <artikl id="lekcija_8">Monomials and polynomials</artikl>
+            <artikl id="lekcija_9">Multiplying polynomials</artikl>
+            <artikl id="lekcija_10">The value of an algebraic expression</artikl>
+            <artikl id="lekcija_11">Factorization</artikl>
+            <artikl id="lekcija_12">Algebra fractions</artikl>
+
+            <artikl id="naslov_4">LINEAR EQUATIONS</artikl>
+            <artikl id="lekcija_13">Equations with one variable</artikl>
+            <artikl id="lekcija_14">Equations with absolute values</artikl>
+            <artikl id="lekcija_15">Equations with two variables</artikl>
+            <artikl id="lekcija_16">The application of equations</artikl>
+
+            <artikl id="naslov_5">LINEAR INEQUATIONS</artikl>
+            <artikl id="lekcija_17">Inequalities with one variable</artikl>
+            <artikl id="lekcija_18">Equation systems</artikl>
+            <artikl id="lekcija_19">More complex inequalities</artikl>
+            <artikl id="lekcija_20">Inequalities with absolute values</artikl>
+            <artikl id="lekcija_21">The application of inequalities</artikl>
+
+            <artikl id="naslov_6">LINEAR FUNCTIONS</artikl>
+            <artikl id="lekcija_22">Coordinate system</artikl>
+            <artikl id="lekcija_23">Linear function</artikl>
+            <artikl id="lekcija_24">A function with absolute values</artikl>
+            <artikl id="lekcija_25">Systems of linear equations</artikl>
+            <artikl id="lekcija_26">Application of the system of linear equations</artikl>
+
+            <artikl id="naslov_7">COMPLIANCE AND SIMILARITY</artikl>
+            <artikl id="lekcija_27">Characteristic points of a triangle</artikl>
+            <artikl id="lekcija_28">Compliance</artikl>
+            <artikl id="lekcija_29">Similarity</artikl>
+            <artikl id="lekcija_30">The lesson of Thales</artikl>
+
+            <artikl id="naslov_8">TRIGONOMETRY OF A RIGHT-ANGLED TRIANGLE</artikl>
+            <artikl id="lekcija_31">Trigonometric functions of acute angles</artikl>
+            <artikl id="lekcija_32">Trigonometric functions calculation</artikl>
+            <artikl id="lekcija_33">Application of trigonometric functions</artikl>
+        </sekcija_2>
+        <futer>
+            <kontakt>Contact: jstojic@tvz.hr vkravaica@tvz.hr dvrckovi@tvz.hr</kontakt>
+        </futer>
+    </Materials>
+
+    <!--
+    MARK: CIJELI BROJEVI
+-->
+
+    <cijeliBrojevi id="hr">
+
+        <sekcija_1>
+            <artikl id="naslov_1">MathMatters</artikl>
+            <artikl id="naslov_2">Realni brojevi > Prirodni, cijeli i racionalni brojevi</artikl>
+        </sekcija_1>
+
+        <sekcija_2>
+            <artikl id="naslov_1">PRIRODNI,CIJELI I RACIONALNI BROJEVI</artikl>
+            <artikl id="naslov_2">PRIRODNI BROJEVI</artikl>
+            <artikl id="paragraf_1">Prirodni brojevi su oni koji kreću od 1 u pozitivnu beskonačnost
+                dakle 1,
+                2,3,4...Zajedno čine skup N.
+                Ako želimo reći da je broj 10 dio skupa N ovako ćemo to zapisati: 10 E N.</artikl>
+            <artikl id="gumb">N = {0,1,2,3,4...besk}</artikl>
+            <artikl id="paragraf_2">Slika 1. Brojenjem godova na panju određujemo broj godina drveta</artikl>
+        </sekcija_2>
+
+        <sekcija_3>
+            <artikl id="naslov_1">CIJELI BROJEVI</artikl>
+            <artikl id="paragraf_1">Cijeli brojevi su svi prirodni brojevi, nula i svi prirodni
+                brojevi s
+                minusom ispred.Zajedno čine skup Z.</artikl>
+            <artikl id="gumb">Z = {-2,-1,0,1,2,3,...besk}</artikl>
+            <artikl id="paragraf_2">Slika 2. Cijeli se brojevi koriste za označavanje katova
+                najčešće u
+                garažama.</artikl>
+        </sekcija_3>
+
+        <sekcija_4>
+            <artikl id="naslov_1">RACIONALNI BROJEVI</artikl>
+            <artikl id="paragraf_1">RACIONALNI BROJ je broj koji se može zapisati u obliku razlomka
+                kojemu je
+                brojnik cijeli, a nazivnik prirodni broj.</artikl>
+            <artikl id="gumb">Q = {-1/2,-0.3,0,1/7,2,...besk}</artikl>
+            <artikl id="paragraf_2">Slika 3. Racionalni brojevi mogu se korisiti u svrhu podjele
+                torte na
+                jednake komade.</artikl>
+        </sekcija_4>
+
+        <sekcija_5>
+            <artikl id="naslov_1">PARNI I NEPARNI BROJEVI</artikl>
+            <artikl id="paragraf_1">Parni brojevi su oni koji su djeljivi s brojem 2 bez ostatka, a
+                neparni su
+                svi koji nisu</artikl>
+            <artikl id="paran">PARAN</artikl>
+            <artikl id="neparan">NEPARAN</artikl>
+        </sekcija_5>
+
+        <sekcija_6>
+            <artikl id="naslov_1">PROSTI I SLOŽENI BROJEVI</artikl>
+            <artikl id="paragraf_1">Prosti broj je onaj koji ima 2 djeljitelja, a složeni onaj koji
+                ima više od
+                2</artikl>
+            <artikl id="prost">je djeljiv 1 i 2 tako da je PROST</artikl>
+            <artikl id="slozen">je djeljiv 4, 2, 1 tako da je SLOŽEN</artikl>
+            <artikl id="jedan">je djeljiv SAMO S 1 tako da je NIJE NI PROST NI SLOŽEN</artikl>
+        </sekcija_6>
+
+        <sekcija_7>
+            <artikl id="naslov_1">DODATNI MATERIJAL</artikl>
+            <artikl id="paragraf_1">Najveći zajednički djelitelj (NZD) i Najmanji zajednički
+                višekratnik (NZV):
+                Ovi koncepti su ključni u teoriji brojeva.
+                NZD je najveći broj s kojim se 2 broja mogu dijeliti, dok je NZV najmanji broj koji
+                je višekratnik oba broja.</artikl>
+            <artikl id="paragraf_2">Najveći zajednički djelitelj</artikl>
+            <artikl id="nacin_1">1.način</artikl>
+            <artikl id="primjer_1">Želimo naći najveći zajednički djelitelj brojeva 48 i 72.Prvo
+                rastavimo brojeve
+                na proste faktore.</artikl>
+            <artikl id="paragraf_3">Označene dijelovi predstavljaju proste faktore koji su
+                zajednički
+                brojevima. </artikl>
+            <artikl id="paragraf_4">Umnožak tih faktora je njihov najveći zajednički djelitelj</artikl>
+            <artikl id="način_2">2.način</artikl>
+            <artikl id="paragraf_5">Djelitelja možemo pronaći i na brži način djeljenjem brojeva na
+                proste
+                faktore istovremeno.</artikl>
+            <artikl id="paragraf_6">Najmanji zajednički višekratnik </artikl>
+            <artikl id="paragraf_7">NZV određujemo tako da za svaki od faktora iz prošlog primjera
+                pogledamo koliko se puta ponavljaju pri rastavu brojeva.
+                Onoliko puta koliko se najviše ponavlja će se koristiti kao faktor u zajedničkom
+                višekratniku.</artikl>
+            <artikl id="paragraf_8">U ovome slučaju broj 2 se pojavljuje najviše četiri puta, a broj
+                3 dva puta, a najmanji zajednički višekratnik je
+                umnožak tih brojeva. </artikl>
+        </sekcija_7>
+
+        <futer>
+            <kontakt>Kontakt: jstojic@tvz.hr vkravaica@tvz.hr dvrckovi@tvz.hr</kontakt>
+        </futer>
+        
+    </cijeliBrojevi>
+
+    <cijeliBrojevi id="en">
+        <sekcija_1>
+            <artikl id="naslov_1">MathMatters</artikl>
+            <artikl id="naslov_2">Real numbers > Natural, integer, and rational numbers</artikl>
+        </sekcija_1>
+
+        <sekcija_2>
+            <artikl id="naslov_1">NATURAL, INTEGER AND RATIONAL NUMBERS</artikl>
+            <artikl id="naslov_2">NATURAL NUMBERS</artikl>
+            <artikl id="paragraf_1">Natural numbers are those that go from 1 to positive infinity, i.e. 1, 2, 3, 4... Together they make up the set N. If we want to say that the number 10 is part of the set N, we will write it like this: 10 E N.</artikl>
+            <artikl id="gumb">N = {0, 1, 2, 3, 4... infinity}</artikl>
+            <artikl id="paragraf_2">Image 1. Counting the years on the stump determines the number of years of the tree</artikl>
+        </sekcija_2>
+
+        <sekcija_3>
+            <artikl id="naslov_1">INTEGER NUMBERS</artikl>
+            <artikl id="paragraf_1">Integers are all natural numbers, zero and all natural numbers with a minus in front. Together they form the set Z.</artikl>
+            <artikl id="gumb">Z = {-2, -1, 0, 1, 2, 3... infinity}</artikl>
+            <artikl id="paragraf_2">Image 2. Whole numbers are used to indicate floors, most often in garages.</artikl>
+        </sekcija_3>
+
+        <sekcija_4>
+            <artikl id="naslov_1">RATIONAL NUMBERS</artikl>
+            <artikl id="paragraf_1">A RATIONAL NUMBER is a number that can be written in the form of a fraction whose numerator is a whole number and whose denominator is a natural number.</artikl>
+            <artikl id="gumb">Q = {-1/2, -0.3, 0, 1/7, 2... infinity}</artikl>
+            <artikl id="paragraf_2">Image 3. Rational numbers can be used for the purpose of dividing the cake into equal pieces.</artikl>
+        </sekcija_4>
+
+        <sekcija_5>
+            <artikl id="naslov_1">EVEN AND ODD NUMBERS</artikl>
+            <artikl id="paragraf_1">Even numbers are those that are divisible by 2 without a remainder, and odd numbers are those that are not</artikl>
+            <artikl id="paran">EVEN</artikl>
+            <artikl id="neparan">ODD</artikl>
+        </sekcija_5>
+
+        <sekcija_6>
+            <artikl id="naslov_1">SIMPLE AND COMPLEX NUMBERS</artikl>
+            <artikl id="paragraf_1">A prime number is one that has 2 divisors, and a complex number is one that has more than 2</artikl>
+            <artikl id="prost">is divisible by 1 and 2 so it is SIMPLE</artikl>
+            <artikl id="slozen">is divisible by 4, 2, 1 so it is COMPLEX</artikl>
+            <artikl id="jedan">is divisible ONLY by 1 so it is NEITHER SIMPLE NOR COMPLEX</artikl>
+        </sekcija_6>
+
+        <sekcija_7>
+            <artikl id="naslov_1">EXTRA MATERIAL</artikl>
+            <artikl id="paragraf_1">Greatest Common Divisor (GCD) and Least Common Multiple (LCG): These concepts are crucial in number theory. NZD is the largest number by which 2 numbers can be divided, while NZV is the smallest number that is a multiple of both numbers.</artikl>
+            <artikl id="paragraf_2">The greatest common divisor</artikl>
+            <artikl id="nacin_1">1st method</artikl>
+            <artikl id="primjer_1">We want to find the greatest common divisor of the numbers 48 and 72. First, let's divide the numbers into prime factors.</artikl>
+            <artikl id="paragraf_3">The marked parts represent prime factors common to the numbers.</artikl>
+            <artikl id="paragraf_4">The product of these factors is their greatest common factor</artikl>
+            <artikl id="način_2">2nd method</artikl>
+            <artikl id="paragraf_5">We can find the divisor in a faster way by dividing numbers into simple factors simultaneously.</artikl>
+            <artikl id="paragraf_6">Least Common Multiple</artikl>
+            <artikl id="paragraf_7">We determine the LCG by looking for each of the factors from the previous example, how many times they are repeated when dividing the numbers. The number of times that is repeated the most will be used as a factor in the common multiple.</artikl>
+            <artikl id="paragraf_8">In this case, the number 2 appears at most four times, and the number 3 twice, and the lowest common multiple is the product of these numbers. </artikl>
+        </sekcija_7>
+
+        <futer>
+            <kontakt>Contact: jstojic@tvz.hr vkravaica@tvz.hr dvrckovi@tvz.hr</kontakt>
+        </futer>
+
+    </cijeliBrojevi>
+
+    <!--
+    MARK: Account
+    -->
+    <Account lang="hr">
+        <naslov>VAŠ RAČUN</naslov>
+        <paragraf>Pozdrav</paragraf>
+        <email>E-adresa: </email>
+        <datum>Datum registracije: </datum>
+        <odjava>ODJAVA</odjava>
+    </Account>
+
+    <Account lang="en">
+        <naslov>YOUR ACCOUNT</naslov>
+        <paragraf>Welcome</paragraf>
+        <email>E-mail: </email>
+        <datum>Date of registration: </datum>
+        <odjava>LOGOUT</odjava>
+    </Account>
 
 </Content>

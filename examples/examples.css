@@ -1,0 +1,46 @@
+/*
+// CSS variables
+// Default values
+*/
+:root {
+    font-family: "Montserrat", Helvetica, sans-serif;
+  
+    --primary_color: #ffffff;
+    --secondary_color: #212121;
+  
+    --primary_text_color: #000000;
+    --secondary_text_color: #ffffff;
+  
+    --primary_link_color: #ff8800;
+    --secondary_link_color: #ff8800;
+    --hover_link_color: #ff6600;
+  
+    --dropdown_background: #dddddd;
+    --dropdown_background_hover: #ddddddcc;
+    --dropdown_box_shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  
+    --back_to_top_shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.2);
+  
+    /* Animations */
+    scroll-behavior: smooth;
+  }
+  
+  /* Makes a document fit the whole screen */
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  p.error {
+    color: red;
+  }
+  
+  body {
+    margin: 0;
+    font-family: "Montserrat", Helvetica, sans-serif;
+    font-weight: bold;
+    background-image: linear-gradient(to right, rgb(0, 124, 165), rgb(0, 83, 83));
+    color: white;
+    display: flex;
+    flex-direction: column;
+  }
